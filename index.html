@@ -1,639 +1,1093 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- ── Primary SEO ── -->
-  <title>NamtanFilm ✦ The Universe of Namtan & Film Racha</title>
-  <meta name="description" content="The fan universe of Namtan Tipnaree & Film Racha — two stars, one sky, infinite chemistry. Dramas, fashion, news and the Lunars fandom." />
-  <meta name="keywords" content="Namtan Tipnaree, Film Racha, NamtanFilm, Lunars, Girl Rules, GMMTV, Thai actress, Thai drama" />
-  <meta name="author" content="Lunars Fan Site" />
-
-  <!-- ── Open Graph (Facebook, Line, iMessage preview) ── -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="NamtanFilm ✦ Two Stars · One Sky" />
-  <meta property="og:description" content="The fan universe of Namtan Tipnaree & Film Racha — dramas, fashion, news and the Lunars fandom." />
-  <meta property="og:image" content="https://img.youtube.com/vi/YWkIBHRFDHc/maxresdefault.jpg" />
-  <meta property="og:url" content="https://namtanfilm.github.io" />
-
-  <!-- ── Twitter / X Card ── -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="NamtanFilm ✦ Two Stars · One Sky" />
-  <meta name="twitter:description" content="The fan universe of Namtan Tipnaree & Film Racha — dramas, fashion, news and the Lunars fandom." />
-  <meta name="twitter:image" content="https://img.youtube.com/vi/YWkIBHRFDHc/maxresdefault.jpg" />
-
-  <!-- ── Favicon (inline SVG as data URI) ── -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>" />
-
-  <!-- ── Theme color (browser chrome on mobile) ── -->
-  <meta name="theme-color" content="#06060E" />
-
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>NamtanFilm ✦ The Universe of Namtan &amp; Film Rachanun</title>
+<meta name="description" content="The fan universe of Namtan Tipnaree &amp; Film Rachanun — two stars, one sky, infinite chemistry. Girl Rules 2026, GMMTV, fashion, news and the Lunars fandom."/>
+<meta name="keywords" content="Namtan Tipnaree, Film Rachanun, NamtanFilm, Lunars, Girl Rules, GMMTV, Thai actress, Thai drama, PRADA, POLO RALPH LAUREN"/>
+<meta name="author" content="Lunars Fan Site"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="NamtanFilm ✦ Two Stars · One Sky"/>
+<meta property="og:description" content="The fan universe of Namtan Tipnaree &amp; Film Rachanun — Girl Rules 2026, fashion, news and the Lunars fandom."/>
+<meta property="og:image" content="https://img.youtube.com/vi/YWkIBHRFDHc/maxresdefault.jpg"/>
+<meta property="og:url" content="https://namtanfilm.github.io"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="NamtanFilm ✦ Two Stars · One Sky"/>
+<meta name="twitter:description" content="The fan universe of Namtan Tipnaree &amp; Film Rachanun — Girl Rules 2026, GMMTV."/>
+<meta name="twitter:image" content="https://img.youtube.com/vi/YWkIBHRFDHc/maxresdefault.jpg"/>
+<meta name="theme-color" content="#06060E"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>"/>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+/* ── RESET & BASE ── */
 *{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
 ::-webkit-scrollbar{width:3px;}
 ::-webkit-scrollbar-thumb{background:rgba(232,228,218,0.12);}
+body{background:#06060E;color:#E8E4DA;font-family:Georgia,serif;overflow-x:hidden;}
 
-.app{background:#06060E;color:#E8E4DA;font-family:Georgia,serif;overflow-x:hidden;}
+/* ── NOISE OVERLAY ── */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0.03;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px 200px;}
 
-/* ── NAV ── */
-.nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:16px 40px;transition:background 0.5s;}
-.nav.scrolled{background:rgba(6,6,14,0.94);backdrop-filter:blur(12px);}
-.nav-logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;font-style:italic;color:rgba(232,228,218,0.75);letter-spacing:0.1em;}
-.nav-links{display:flex;gap:28px;}
-.nav-link{font-size:8px;letter-spacing:0.28em;color:rgba(232,228,218,0.38);cursor:pointer;background:none;border:none;font-family:Georgia,serif;transition:color 0.3s;}
-.nav-link:hover{color:#E8E4DA;}
-.nav-cta{font-size:8px;letter-spacing:0.25em;color:rgba(232,228,218,0.38);border:1px solid rgba(232,228,218,0.14);padding:6px 14px;cursor:pointer;background:none;font-family:Georgia,serif;transition:all 0.3s;}
-.nav-cta:hover{border-color:rgba(232,228,218,0.4);color:#E8E4DA;}
-
-/* ── LIVE TICKER ── */
-.live-ticker{position:fixed;bottom:0;left:0;right:0;z-index:500;display:flex;justify-content:center;padding:9px 0;background:linear-gradient(to top,rgba(6,6,14,0.9),transparent);}
-.live-dot{width:5px;height:5px;border-radius:50%;display:inline-block;animation:livePulse 2s infinite;}
-.ticker-text{font-size:8px;letter-spacing:0.3em;color:rgba(232,228,218,0.35);display:flex;align-items:center;gap:10px;}
+/* ── CORMORANT UTILITY ── */
+.corm{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;}
+.corm-i{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-style:italic;}
 
 /* ── STARS ── */
-.star{position:absolute;border-radius:50%;animation:twinkle var(--dur) var(--del) infinite;}
-@keyframes twinkle{0%,100%{opacity:var(--op)}50%{opacity:calc(min(var(--op) + 0.38, 1))}}
+.star{position:absolute;border-radius:50%;animation:twinkle var(--dur) var(--del) infinite ease-in-out;}
+@keyframes twinkle{0%,100%{opacity:var(--op)}50%{opacity:calc(min(var(--op)+0.42,1))}}
 
-/* ── SECTION SHARED ── */
+/* ══════════════════════════════════════
+   FIXED NAVIGATION
+══════════════════════════════════════ */
+#main-nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;justify-content:space-between;align-items:center;padding:18px 48px;transition:background 0.5s,backdrop-filter 0.5s;}
+#main-nav.scrolled{background:rgba(6,6,14,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(232,228,218,0.06);}
+.nav-logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-style:italic;color:rgba(232,228,218,0.78);letter-spacing:0.08em;cursor:pointer;}
+.nav-links{display:flex;gap:32px;align-items:center;}
+.nav-link{font-size:8px;letter-spacing:0.32em;color:rgba(232,228,218,0.38);cursor:pointer;background:none;border:none;font-family:Georgia,serif;transition:color 0.3s;padding:4px 0;}
+.nav-link:hover{color:#E8E4DA;}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.nav-hamburger span{display:block;width:22px;height:1px;background:rgba(232,228,218,0.5);transition:all 0.3s;}
+/* Mobile drawer */
+#mobile-drawer{display:none;position:fixed;top:0;left:0;right:0;z-index:850;background:rgba(6,6,14,0.97);backdrop-filter:blur(20px);padding:80px 32px 40px;transform:translateY(-100%);transition:transform 0.4s cubic-bezier(0.34,1,0.64,1);}
+#mobile-drawer.open{transform:translateY(0);}
+.drawer-link{display:block;font-size:11px;letter-spacing:0.38em;color:rgba(232,228,218,0.5);padding:14px 0;border-bottom:1px solid rgba(232,228,218,0.06);cursor:pointer;transition:color 0.3s;background:none;border-left:none;border-right:none;border-top:none;width:100%;text-align:left;font-family:Georgia,serif;}
+.drawer-link:hover{color:#E8E4DA;}
+
+/* ══════════════════════════════════════
+   LIVE TICKER (fixed bottom)
+══════════════════════════════════════ */
+#live-ticker{position:fixed;bottom:0;left:0;right:0;z-index:800;background:linear-gradient(to top,rgba(6,6,14,0.95) 0%,rgba(6,6,14,0.7) 70%,transparent 100%);padding:10px 0 8px;overflow:hidden;}
+.ticker-inner{display:flex;align-items:center;gap:0;white-space:nowrap;animation:tickerScroll 38s linear infinite;}
+.ticker-item{font-size:8px;letter-spacing:0.3em;padding:0 28px;color:rgba(232,228,218,0.35);flex-shrink:0;}
+.ticker-item.gold{color:rgba(201,169,110,0.65);}
+.ticker-item.teal{color:rgba(127,191,184,0.65);}
+.ticker-dot{width:4px;height:4px;border-radius:50%;flex-shrink:0;animation:livePulse 2s infinite;}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(0.5)}}
+
+/* ══════════════════════════════════════
+   HERO — FULL-SCREEN SPLIT
+══════════════════════════════════════ */
+#hero{position:relative;height:100vh;display:flex;overflow:hidden;}
+.h-side{position:relative;overflow:hidden;cursor:pointer;transition:flex 0.9s cubic-bezier(0.34,1,0.64,1);flex:1;min-width:0;}
+.h-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 1.6s ease,transform 1.2s ease;opacity:0;}
+.h-photo.loaded{opacity:1;}
+.h-grad-gold{position:absolute;bottom:0;left:0;right:0;height:65%;background:linear-gradient(to top,rgba(12,10,5,1) 0%,rgba(17,13,7,0.9) 30%,transparent 100%);pointer-events:none;}
+.h-grad-teal{position:absolute;bottom:0;left:0;right:0;height:65%;background:linear-gradient(to top,rgba(4,10,11,1) 0%,rgba(7,13,14,0.9) 30%,transparent 100%);pointer-events:none;}
+.h-grad-top{position:absolute;top:0;left:0;right:0;height:22%;background:linear-gradient(to bottom,rgba(6,6,14,0.75),transparent);pointer-events:none;}
+.h-merge-l{position:absolute;inset:0;background:linear-gradient(to right,rgba(6,6,14,0.35),transparent 40%);pointer-events:none;}
+.h-merge-r{position:absolute;inset:0;background:linear-gradient(to left,rgba(6,6,14,0.35),transparent 40%);pointer-events:none;}
+.h-glow-gold{position:absolute;inset:-12%;background:radial-gradient(ellipse 70% 80% at 55% 40%,rgba(201,169,110,0.15),transparent 68%);mix-blend-mode:screen;pointer-events:none;transition:opacity 0.7s;}
+.h-glow-teal{position:absolute;inset:-12%;background:radial-gradient(ellipse 70% 80% at 45% 40%,rgba(127,191,184,0.12),transparent 68%);mix-blend-mode:screen;pointer-events:none;transition:opacity 0.7s;}
+.h-placeholder{position:absolute;inset:0;}
+/* spine */
+#h-spine{position:absolute;left:50%;top:0;bottom:0;width:1px;z-index:20;pointer-events:none;
+  background:linear-gradient(to bottom,transparent,rgba(232,228,218,0.15) 20%,rgba(232,228,218,0.28) 50%,rgba(232,228,218,0.15) 80%,transparent);
+  transition:transform 0.9s cubic-bezier(0.34,1,0.64,1);}
+.spine-dot{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:8px;height:8px;border-radius:50%;background:#E8E4DA;box-shadow:0 0 18px 5px rgba(232,228,218,0.22);animation:spineFloat 4s ease-in-out infinite;}
+@keyframes spineFloat{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 8px))}}
+#h-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:25;text-align:center;pointer-events:none;transition:opacity 0.5s;}
+/* text overlays */
+.h-text-l{position:absolute;bottom:0;left:0;right:0;padding:0 38px 88px;z-index:10;}
+.h-text-r{position:absolute;bottom:0;left:0;right:0;padding:0 38px 88px;z-index:10;text-align:right;}
+.h-eyebrow{font-size:8px;letter-spacing:0.42em;opacity:0.6;font-family:Georgia,serif;margin-bottom:6px;}
+.h-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(52px,7.5vw,96px);font-weight:300;color:#E8E4DA;line-height:0.85;opacity:0;transform:translateY(22px);transition:opacity 1.2s cubic-bezier(0.34,1,0.64,1),transform 1.2s cubic-bezier(0.34,1,0.64,1);}
+.h-name.visible{opacity:1;transform:translateY(0);}
+.h-role{font-size:8px;letter-spacing:0.32em;color:rgba(232,228,218,0.36);margin-bottom:10px;}
+.h-line-l{height:1px;background:linear-gradient(to right,#C9A96E,transparent);margin-top:10px;width:28px;transition:width 0.85s cubic-bezier(0.34,1.1,0.64,1);}
+.h-line-r{height:1px;background:linear-gradient(to left,#7FBFB8,transparent);margin-top:10px;width:28px;margin-left:auto;transition:width 0.85s cubic-bezier(0.34,1.1,0.64,1);}
+.h-tags{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;opacity:0;transform:translateY(8px);transition:all 0.5s;}
+.h-tags-r{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;justify-content:flex-end;opacity:0;transform:translateY(8px);transition:all 0.5s;}
+.h-tag{font-size:7px;letter-spacing:0.26em;padding:2px 8px;border:1px solid;}
+.h-quote{font-size:12px;line-height:1.75;font-style:italic;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(232,228,218,0.46);max-width:240px;margin-top:10px;opacity:0;transform:translateY(6px);transition:all 0.6s;}
+.h-side:hover .h-quote,.h-side.expanded .h-quote{opacity:1;transform:translateY(0);}
+.h-side:hover .h-tags,.h-side.expanded .h-tags{opacity:1;transform:translateY(0);}
+.h-side:hover .h-tags-r,.h-side.expanded .h-tags-r{opacity:1;transform:translateY(0);}
+/* play btn */
+.h-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:15;width:58px;height:58px;border-radius:50%;background:rgba(6,6,14,0.72);border:1.5px solid rgba(232,228,218,0.32);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity 0.4s,background 0.3s;pointer-events:none;}
+.h-side:hover .h-play{opacity:1;pointer-events:auto;}
+.h-play:hover{background:rgba(232,228,218,0.1);}
+.h-yt-overlay{position:absolute;inset:0;z-index:30;background:#06060E;display:none;}
+.h-yt-overlay iframe{width:100%;height:100%;border:none;}
+/* CTA row */
+#h-cta{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:30;display:flex;gap:18px;align-items:center;}
+.h-cta-btn{font-size:8px;letter-spacing:0.28em;padding:7px 18px;border:1px solid;cursor:pointer;font-family:Georgia,serif;background:transparent;transition:all 0.3s;}
+/* copyright */
+.h-cr{position:absolute;font-size:7px;letter-spacing:0.1em;font-family:Georgia,serif;bottom:8px;color:rgba(232,228,218,0.2);}
+
+/* ══════════════════════════════════════
+   STATS BAR
+══════════════════════════════════════ */
+#stats-bar{background:#0A0A16;border-top:1px solid rgba(232,228,218,0.05);border-bottom:1px solid rgba(232,228,218,0.05);overflow:hidden;padding:0;}
+.stats-inner{display:flex;align-items:center;gap:0;animation:statsScroll 30s linear infinite;width:max-content;}
+.stat-item{display:flex;align-items:center;gap:10px;padding:14px 36px;flex-shrink:0;border-right:1px solid rgba(232,228,218,0.06);}
+.stat-val{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;line-height:1;}
+.stat-lbl{font-size:7px;letter-spacing:0.3em;color:rgba(232,228,218,0.32);}
+@keyframes statsScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ══════════════════════════════════════
+   SHARED SECTION STYLES
+══════════════════════════════════════ */
 .section{position:relative;overflow:hidden;}
-.section-eyebrow{font-size:8px;letter-spacing:0.45em;color:rgba(232,228,218,0.3);font-family:Georgia,serif;margin-bottom:14px;}
-.cormorant{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;}
-.divider{display:flex;align-items:center;gap:16px;padding:0 48px;}
-.divider-line{flex:1;height:1px;}
-.divider-label{font-size:8px;letter-spacing:0.4em;color:rgba(232,228,218,0.28);white-space:nowrap;}
+.sec-eyebrow{font-size:8px;letter-spacing:0.46em;color:rgba(232,228,218,0.3);font-family:Georgia,serif;margin-bottom:12px;}
+.sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;color:#E8E4DA;}
+.divider-row{display:flex;align-items:center;gap:18px;padding:0 48px;}
+.div-line{flex:1;height:1px;}
+.div-label{font-size:8px;letter-spacing:0.4em;color:rgba(232,228,218,0.26);white-space:nowrap;}
 
-/* ═══════════════════════════
-   DESKTOP HERO
-═══════════════════════════ */
-.d-hero{position:relative;height:100vh;display:flex;overflow:hidden;}
-.d-side{position:relative;overflow:hidden;cursor:pointer;transition:flex 0.9s cubic-bezier(0.34,1,0.64,1);flex:1;}
-.d-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 1.5s ease,transform 1.2s ease;}
-.d-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;width:64px;height:64px;border-radius:50%;background:rgba(6,6,14,0.75);border:1.5px solid rgba(232,228,218,0.35);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity 0.4s ease;pointer-events:none;}
-.d-play-btn svg{margin-left:4px;}
-.d-side:hover .d-play-btn{opacity:1;pointer-events:auto;}
-.d-play-btn:hover{background:rgba(232,228,218,0.12);border-color:rgba(232,228,218,0.6);}
-.d-yt-overlay{position:absolute;inset:0;z-index:20;background:#06060E;}
-.d-yt-overlay iframe{width:100%;height:100%;border:none;}
-.d-grad-n{position:absolute;bottom:0;left:0;right:0;height:62%;background:linear-gradient(to top,#110E07 0%,rgba(17,14,7,0.88)35%,transparent 100%);pointer-events:none;}
-.d-grad-f{position:absolute;bottom:0;left:0;right:0;height:62%;background:linear-gradient(to top,#070D0E 0%,rgba(7,13,14,0.88)35%,transparent 100%);pointer-events:none;}
-.d-grad-top{position:absolute;top:0;left:0;right:0;height:22%;background:linear-gradient(to bottom,rgba(6,6,14,0.7),transparent);pointer-events:none;}
-.d-merge-n{position:absolute;inset:0;background:linear-gradient(to right,rgba(6,6,14,0.4),transparent 38%);pointer-events:none;}
-.d-merge-f{position:absolute;inset:0;background:linear-gradient(to left,rgba(6,6,14,0.4),transparent 38%);pointer-events:none;}
-.d-glow-n{position:absolute;inset:-10%;background:radial-gradient(ellipse 75% 85% at 58% 38%,rgba(201,169,110,0.13),transparent 65%);mix-blend-mode:screen;pointer-events:none;transition:opacity 0.6s;}
-.d-glow-f{position:absolute;inset:-10%;background:radial-gradient(ellipse 75% 85% at 42% 38%,rgba(127,191,184,0.1),transparent 65%);mix-blend-mode:screen;pointer-events:none;transition:opacity 0.6s;}
-.d-text-n{position:absolute;bottom:0;left:0;right:0;padding:0 36px 80px;z-index:5;}
-.d-text-f{position:absolute;bottom:0;left:0;right:0;padding:0 36px 80px;z-index:5;text-align:right;}
-.d-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(48px,7vw,88px);font-weight:300;color:#E8E4DA;line-height:0.88;}
-.d-role{font-size:8px;letter-spacing:0.33em;color:rgba(232,228,218,0.36);margin-bottom:8px;}
-.d-line-n{height:1px;background:linear-gradient(to right,#C9A96E,transparent);margin-top:9px;transition:width 0.8s cubic-bezier(0.34,1.1,0.64,1);}
-.d-line-f{height:1px;background:linear-gradient(to left,#7FBFB8,transparent);margin-top:9px;transition:width 0.8s cubic-bezier(0.34,1.1,0.64,1);margin-left:auto;}
-.d-tags{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;transition:all 0.4s;}
-.d-tags-r{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;justify-content:flex-end;transition:all 0.4s;}
-.d-tag{font-size:7px;letter-spacing:0.28em;padding:2px 8px;border:1px solid;}
-.d-quote{font-size:12px;line-height:1.7;color:rgba(232,228,218,0.48);font-style:italic;font-family:'Cormorant Garamond',Georgia,serif;max-width:230px;margin-top:10px;transition:all 0.5s;}
-.d-badge{position:absolute;top:76px;transition:all 0.4s;}
-.d-badge-val{font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;font-weight:300;line-height:1;}
-.d-badge-lbl{font-size:7px;letter-spacing:0.22em;margin-top:2px;}
-.d-spine{position:absolute;left:50%;top:0;bottom:0;width:1px;z-index:10;pointer-events:none;background:linear-gradient(to bottom,transparent,rgba(232,228,218,0.18)20%,rgba(232,228,218,0.3)50%,rgba(232,228,218,0.18)80%,transparent);transition:transform 0.9s cubic-bezier(0.34,1,0.64,1);}
-.spine-star{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:9px;height:9px;border-radius:50%;background:#E8E4DA;box-shadow:0 0 18px 6px rgba(232,228,218,0.2);animation:floatStar 4s ease-in-out infinite;}
-.d-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:15;text-align:center;pointer-events:none;transition:opacity 0.5s;}
-.d-cta-row{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:20;display:flex;gap:20px;align-items:center;}
-.d-cta-btn{font-size:8px;letter-spacing:0.3em;padding:6px 16px;border:1px solid;cursor:pointer;font-family:Georgia,serif;background:transparent;transition:all 0.3s;}
-.cpright{position:absolute;font-size:7px;letter-spacing:0.12em;font-family:Georgia,serif;bottom:6px;transition:opacity 0.5s;}
+/* fade-up on scroll */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.9s cubic-bezier(0.34,1,0.64,1),transform 0.9s cubic-bezier(0.34,1,0.64,1);}
+.fade-up.visible{opacity:1;transform:translateY(0);}
 
-/* ═══════════════════════════
-   MOBILE HERO + SWIPE
-═══════════════════════════ */
-.m-hero{position:relative;height:100vh;max-height:680px;overflow:hidden;background:#06060E;}
-.m-topbar{position:absolute;top:0;left:0;right:0;z-index:30;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(6,6,14,0.85),transparent);}
-.m-logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-style:italic;color:rgba(232,228,218,0.7);}
-.m-live{display:flex;align-items:center;gap:6px;font-size:8px;letter-spacing:0.22em;color:rgba(232,228,218,0.38);}
-.progress-dots{position:absolute;top:14px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:30;}
-.pdot{height:3px;border-radius:2px;background:rgba(232,228,218,0.22);transition:all 0.4s ease;}
-.pdot.active{background:#E8E4DA;}
-.card-stack{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
-.swipe-card{position:absolute;width:88%;max-width:340px;height:80%;max-height:500px;border-radius:14px;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab;will-change:transform;box-shadow:0 28px 90px rgba(0,0,0,0.75);}
-.swipe-card:active{cursor:grabbing;}
-.card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 1.2s;}
-.card-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,6,14,0.96)0%,rgba(6,6,14,0.55)38%,transparent 68%);pointer-events:none;}
-.card-grad-top{position:absolute;top:0;left:0;right:0;height:28%;background:linear-gradient(to bottom,rgba(6,6,14,0.6),transparent);pointer-events:none;}
-.card-info{position:absolute;bottom:0;left:0;right:0;padding:20px 22px 22px;z-index:5;}
-.card-label{font-size:7px;letter-spacing:0.28em;padding:2px 8px;border:1px solid;display:inline-block;margin-bottom:10px;}
-.card-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:44px;font-weight:300;color:#E8E4DA;line-height:0.88;margin-bottom:6px;}
-.card-role{font-size:8px;letter-spacing:0.28em;color:rgba(232,228,218,0.38);}
-.card-line{height:1px;margin-top:9px;}
-.card-quote{font-size:11px;font-style:italic;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(232,228,218,0.48);line-height:1.65;margin-top:8px;}
+/* ══════════════════════════════════════
+   NAMTAN PROFILE
+══════════════════════════════════════ */
+#namtan{background:#0A0A14;padding:110px 0;}
+.profile-grid{display:grid;grid-template-columns:1fr 1fr;max-width:1200px;margin:0 auto;padding:0 60px;gap:72px;align-items:center;}
+.profile-photo-frame{position:relative;}
+.profile-photo-wrap{position:relative;aspect-ratio:3/4;overflow:hidden;max-width:420px;}
+.profile-photo-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 8s ease;}
+.profile-photo-wrap:hover img{transform:scale(1.04);}
+/* corner decorations */
+.corner{position:absolute;width:28px;height:28px;}
+.corner-tl{top:0;left:0;border-top:1px solid;border-left:1px solid;}
+.corner-tr{top:0;right:0;border-top:1px solid;border-right:1px solid;}
+.corner-bl{bottom:0;left:0;border-bottom:1px solid;border-left:1px solid;}
+.corner-br{bottom:0;right:0;border-bottom:1px solid;border-right:1px solid;}
+.profile-photo-num{position:absolute;bottom:-20px;right:-20px;font-family:'Cormorant Garamond',Georgia,serif;font-size:72px;font-weight:300;line-height:1;opacity:0.06;letter-spacing:-0.05em;pointer-events:none;}
+.profile-text{}
+.profile-stat-row{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap;}
+.profile-stat{text-align:left;}
+.profile-stat-val{font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:300;line-height:1;margin-bottom:3px;}
+.profile-stat-lbl{font-size:7px;letter-spacing:0.28em;color:rgba(232,228,218,0.32);}
+.brand-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:20px;}
+.brand-tag{font-size:7px;letter-spacing:0.26em;padding:3px 9px;border:1px solid;font-family:Georgia,serif;}
+.profile-bio{font-size:13px;line-height:1.85;color:rgba(232,228,218,0.58);font-style:italic;font-family:'Cormorant Garamond',Georgia,serif;margin-top:18px;max-width:460px;}
 
-/* ── SWIPE INDICATORS ── */
-.ind{position:absolute;top:22px;padding:6px 14px;border:2.5px solid;border-radius:5px;font-size:13px;font-weight:700;letter-spacing:0.15em;opacity:0;pointer-events:none;z-index:20;}
-.ind-skip{right:14px;color:#E05A3A;border-color:#E05A3A;transform:rotate(14deg);}
-.ind-love{left:14px;color:#C9A96E;border-color:#C9A96E;transform:rotate(-14deg);}
+/* ══════════════════════════════════════
+   FILM PROFILE (mirrored)
+══════════════════════════════════════ */
+#film{background:#08080F;padding:110px 0;}
+.profile-grid-r{display:grid;grid-template-columns:1fr 1fr;max-width:1200px;margin:0 auto;padding:0 60px;gap:72px;align-items:center;}
+.award-pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(127,191,184,0.28);padding:7px 16px;margin-bottom:22px;}
+.award-pill-star{color:#7FBFB8;font-size:13px;}
+.award-pill-text{font-size:8px;letter-spacing:0.28em;color:rgba(127,191,184,0.75);}
 
-/* ── SWIPE BUTTONS ── */
-.swipe-btns{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:18px;align-items:center;z-index:30;}
-.s-btn{width:54px;height:54px;border-radius:50%;border:1px solid;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;background:rgba(6,6,14,0.75);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
-.s-btn:hover{transform:scale(1.1);}
-.s-btn:active{transform:scale(0.94);}
-.s-btn.skip{border-color:rgba(224,90,58,0.5);color:#E05A3A;font-size:20px;}
-.s-btn.skip:hover{background:rgba(224,90,58,0.14);}
-.s-btn.love{border-color:rgba(201,169,110,0.5);color:#C9A96E;font-size:22px;}
-.s-btn.love:hover{background:rgba(201,169,110,0.14);}
-.s-btn.info{border-color:rgba(232,228,218,0.18);color:rgba(232,228,218,0.45);font-size:13px;width:38px;height:38px;letter-spacing:0.15em;}
+/* ══════════════════════════════════════
+   TOGETHER / CHEMISTRY
+══════════════════════════════════════ */
+#together{background:#07070E;padding:110px 60px;text-align:center;position:relative;}
+#together::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(201,169,110,0.04) 0%,rgba(127,191,184,0.04) 50%,transparent 75%);pointer-events:none;}
+.together-names{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:32px;}
+.together-sep{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(24px,3.5vw,48px);color:rgba(232,228,218,0.2);padding:0 20px;line-height:0.85;}
+/* Girl Rules showcase */
+.gr-showcase{max-width:860px;margin:60px auto 0;border:1px solid rgba(232,228,218,0.08);position:relative;overflow:hidden;}
+.gr-showcase::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(201,169,110,0.4),rgba(127,191,184,0.4),transparent);}
+.gr-inner{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.gr-left{padding:40px;text-align:left;border-right:1px solid rgba(232,228,218,0.07);}
+.gr-right{padding:40px;text-align:left;}
+.gr-thumb{position:relative;cursor:pointer;overflow:hidden;aspect-ratio:16/9;background:#0D0D1A;}
+.gr-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;}
+.gr-thumb:hover img{transform:scale(1.04);}
+.gr-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(6,6,14,0.35);transition:background 0.3s;}
+.gr-thumb:hover .gr-play{background:rgba(6,6,14,0.55);}
+.gr-play-btn{width:56px;height:56px;border-radius:50%;background:rgba(6,6,14,0.8);border:1.5px solid rgba(232,228,218,0.4);display:flex;align-items:center;justify-content:center;transition:border-color 0.3s,background 0.3s;}
+.gr-thumb:hover .gr-play-btn{background:rgba(201,169,110,0.15);border-color:#C9A96E;}
+/* stats row */
+.chem-stats{display:flex;justify-content:center;gap:56px;flex-wrap:wrap;margin-top:56px;}
+.chem-stat{text-align:center;}
+.chem-stat-val{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(30px,4.5vw,52px);font-weight:300;line-height:1;margin-bottom:7px;}
+.chem-stat-lbl{font-size:8px;letter-spacing:0.3em;color:rgba(232,228,218,0.32);}
+.chem-divider{height:1px;background:linear-gradient(to right,transparent,rgba(201,169,110,0.45),rgba(127,191,184,0.45),transparent);max-width:600px;margin:60px auto 0;width:0;transition:width 1.6s ease;}
+.chem-divider.expanded{width:100%;}
+/* fan quotes */
+.fan-quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:820px;margin:52px auto 0;}
+.fan-quote-card{border:1px solid rgba(232,228,218,0.07);padding:22px;text-align:left;transition:border-color 0.3s,transform 0.3s;cursor:default;}
+.fan-quote-card:hover{border-color:rgba(232,228,218,0.18);transform:translateY(-3px);}
+.fan-quote-text{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;font-style:italic;color:rgba(232,228,218,0.65);line-height:1.75;margin-bottom:12px;}
+.fan-quote-src{font-size:8px;letter-spacing:0.22em;color:rgba(232,228,218,0.28);}
+/* gr divider label */
+.gr-label-divider{display:flex;align-items:center;gap:18px;max-width:500px;margin:52px auto 0;}
+.gr-label-text{font-size:9px;letter-spacing:0.46em;color:rgba(232,228,218,0.25);white-space:nowrap;}
+.gr-label-line{flex:1;height:1px;background:rgba(232,228,218,0.08);}
 
-/* ── HINT ── */
-.swipe-hint{position:absolute;bottom:88px;left:50%;transform:translateX(-50%);font-size:8px;letter-spacing:0.3em;color:rgba(232,228,218,0.22);white-space:nowrap;transition:opacity 0.5s;pointer-events:none;}
+/* ══════════════════════════════════════
+   MEDIA GALLERY
+══════════════════════════════════════ */
+#media{background:#0A0A16;padding:100px 60px;}
+.gallery-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:48px;}
+.g-tab{font-size:8px;letter-spacing:0.28em;padding:7px 16px;border:1px solid rgba(232,228,218,0.12);background:transparent;color:rgba(232,228,218,0.38);cursor:pointer;font-family:Georgia,serif;transition:all 0.25s;}
+.g-tab:hover,.g-tab.active{border-color:rgba(232,228,218,0.4);color:#E8E4DA;background:rgba(232,228,218,0.04);}
+#gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto;}
+.g-card{background:rgba(232,228,218,0.02);border:1px solid rgba(232,228,218,0.07);overflow:hidden;transition:transform 0.3s,border-color 0.3s;}
+.g-card:hover{transform:translateY(-4px);border-color:rgba(232,228,218,0.18);}
+.g-media{position:relative;}
+.yt-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;cursor:pointer;background:#0D0D1A;}
+.yt-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;}
+.yt-wrap:hover img{transform:scale(1.04);}
+.yt-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(6,6,14,0.3);transition:background 0.3s;}
+.yt-wrap:hover .yt-overlay{background:rgba(6,6,14,0.5);}
+.yt-play{width:50px;height:50px;border-radius:50%;background:rgba(6,6,14,0.78);border:1.5px solid rgba(232,228,218,0.35);display:flex;align-items:center;justify-content:center;}
+.g-loading{text-align:center;padding:60px;color:rgba(232,228,218,0.3);font-size:11px;letter-spacing:0.3em;animation:gPulse 1.8s ease-in-out infinite;}
+@keyframes gPulse{0%,100%{opacity:0.3}50%{opacity:0.7}}
+.ig-wrap{min-height:180px;background:rgba(232,228,218,0.02);}
+.ig-wrap .instagram-media{width:100%!important;min-width:unset!important;border:none!important;background:transparent!important;}
+.g-meta{padding:14px 16px 16px;}
+.g-person{font-size:8px;letter-spacing:0.28em;margin-bottom:5px;font-family:Georgia,serif;}
+.g-label{font-size:12px;color:#E8E4DA;font-family:'Cormorant Garamond',Georgia,serif;margin-bottom:3px;}
+.g-caption{font-size:9px;color:rgba(232,228,218,0.35);font-family:Georgia,serif;}
+.g-footer{height:1px;}
+.g-type-badge{position:absolute;top:9px;right:9px;font-size:7px;letter-spacing:0.26em;padding:2px 8px;background:rgba(6,6,14,0.78);font-family:Georgia,serif;z-index:5;border:1px solid;}
 
-/* ── LOVE BURST ── */
-.love-burst{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:999;pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:4px;animation:burstAnim 0.9s cubic-bezier(0.34,1.2,0.64,1) forwards;}
-.love-main{font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:300;color:#C9A96E;text-shadow:0 0 30px rgba(201,169,110,0.5);}
-.love-hearts{font-size:22px;letter-spacing:4px;}
-.like-burst{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:999;pointer-events:none;animation:likeFade 0.7s ease forwards;}
-.like-text{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;color:rgba(232,228,218,0.65);letter-spacing:0.15em;}
-@keyframes burstAnim{0%{opacity:0;transform:translate(-50%,-50%) scale(0.5)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.3)}}
-@keyframes likeFade{0%{opacity:0;transform:translate(-50%,-60%) scale(0.8)}40%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-40%) scale(0.95)}}
+/* ══════════════════════════════════════
+   LIVE FEED / NEWS
+══════════════════════════════════════ */
+#feed{background:#08080F;padding:100px 60px;}
+.feed-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;flex-wrap:wrap;gap:16px;}
+.feed-filters{display:flex;gap:7px;flex-wrap:wrap;}
+.f-btn{font-size:8px;letter-spacing:0.24em;padding:6px 14px;border:1px solid rgba(232,228,218,0.11);background:transparent;color:rgba(232,228,218,0.38);cursor:pointer;font-family:Georgia,serif;transition:all 0.25s;}
+.f-btn:hover,.f-btn.active{border-color:rgba(232,228,218,0.38);color:#E8E4DA;background:rgba(232,228,218,0.04);}
+/* timeline */
+#feed-timeline{position:relative;max-width:800px;padding-left:28px;}
+#feed-timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(232,228,218,0.1) 10%,rgba(232,228,218,0.1) 90%,transparent);}
+.feed-item{position:relative;margin-bottom:36px;padding-left:24px;}
+.feed-item::before{content:'';position:absolute;left:-4px;top:6px;width:9px;height:9px;border-radius:50%;border:1px solid rgba(232,228,218,0.2);background:#08080F;transition:border-color 0.3s;}
+.feed-item:hover::before{border-color:rgba(232,228,218,0.5);}
+.feed-item-badge{font-size:7px;letter-spacing:0.28em;padding:2px 8px;border:1px solid;display:inline-block;margin-bottom:9px;font-family:Georgia,serif;}
+.feed-item.hot-item::before{background:#C9A96E;border-color:#C9A96E;box-shadow:0 0 8px rgba(201,169,110,0.4);}
+.feed-item-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;color:#E8E4DA;line-height:1.3;margin-bottom:7px;}
+.feed-item-desc{font-size:12px;font-style:italic;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(232,228,218,0.45);line-height:1.7;margin-bottom:10px;}
+.feed-item-meta{display:flex;justify-content:space-between;align-items:center;font-size:8px;letter-spacing:0.15em;color:rgba(232,228,218,0.24);}
+.hot-pill{font-size:7px;letter-spacing:0.24em;padding:2px 7px;border:1px solid;margin-left:8px;vertical-align:middle;}
 
-/* ── VOTE PANEL ── */
-.vote-panel{background:#0A0A16;padding:22px 24px 28px;border-top:1px solid rgba(232,228,218,0.07);}
-.vote-row{display:flex;flex-direction:column;gap:5px;margin-bottom:11px;}
-.vote-row-top{display:flex;justify-content:space-between;align-items:center;}
-.vote-track{height:3px;background:rgba(232,228,218,0.07);border-radius:2px;overflow:hidden;}
-.vote-fill{height:3px;border-radius:2px;transition:width 0.9s cubic-bezier(0.34,1,0.64,1);}
-.winner-card{background:rgba(201,169,110,0.04);border:1px solid rgba(201,169,110,0.18);border-radius:6px;padding:14px 16px;display:flex;align-items:center;gap:14px;margin-top:18px;}
-.winner-thumb{width:44px;height:56px;border-radius:4px;object-fit:cover;border:1px solid rgba(201,169,110,0.28);flex-shrink:0;}
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+#footer{background:#06060E;border-top:1px solid rgba(232,228,218,0.06);padding:52px 60px 90px;}
+.footer-wm{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(52px,9vw,110px);font-weight:300;color:rgba(232,228,218,0.04);line-height:0.85;letter-spacing:-0.03em;margin-bottom:32px;user-select:none;}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:900px;}
+.footer-col-title{font-size:8px;letter-spacing:0.4em;color:rgba(232,228,218,0.28);margin-bottom:16px;}
+.footer-link{display:block;font-size:10px;color:rgba(232,228,218,0.42);font-family:'Cormorant Garamond',Georgia,serif;text-decoration:none;margin-bottom:8px;transition:color 0.3s;}
+.footer-link:hover{color:#E8E4DA;}
+.footer-disclaimer{margin-top:40px;font-size:9px;color:rgba(232,228,218,0.2);line-height:1.7;max-width:620px;}
+.footer-bottom{margin-top:28px;padding-top:20px;border-top:1px solid rgba(232,228,218,0.05);display:flex;justify-content:space-between;align-items:center;font-size:8px;letter-spacing:0.2em;color:rgba(232,228,218,0.2);}
 
-/* ═══════════════════════════
-   CHEMISTRY SECTION
-═══════════════════════════ */
-.chemistry{background:#08080F;padding:100px 48px;text-align:center;position:relative;}
-.chem-names{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:28px;}
-.metrics-row{display:flex;justify-content:center;gap:52px;flex-wrap:wrap;margin-top:48px;}
-.metric-item{text-align:center;}
-.metric-val{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(28px,4.5vw,48px);font-weight:300;line-height:1;margin-bottom:7px;}
-.metric-lbl{font-size:8px;letter-spacing:0.3em;color:rgba(232,228,218,0.35);}
-.chem-line{height:1px;background:linear-gradient(to right,transparent,rgba(201,169,110,0.5),rgba(127,191,184,0.5),transparent);margin:52px auto 0;transition:width 1.5s ease;}
+/* ══════════════════════════════════════
+   MOBILE BOTTOM NAV
+══════════════════════════════════════ */
+#mobile-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:800;background:rgba(6,6,14,0.96);backdrop-filter:blur(16px);border-top:1px solid rgba(232,228,218,0.08);padding:8px 0 env(safe-area-inset-bottom,8px);}
+.mnav-items{display:flex;justify-content:space-around;align-items:center;}
+.mnav-item{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:6px 12px;min-width:44px;min-height:44px;justify-content:center;background:none;border:none;}
+.mnav-icon{font-size:14px;line-height:1;}
+.mnav-label{font-size:6px;letter-spacing:0.28em;color:rgba(232,228,218,0.38);font-family:Georgia,serif;}
 
-/* ═══════════════════════════
-   STAR WISHES
-═══════════════════════════ */
-.wishes{background:#0D0D1A;padding:100px 48px;position:relative;}
-.wishes-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:0;max-width:1100px;margin:0 auto;}
-.wish-col{padding:0 40px;}
-.wish-col-center{padding:0 36px;min-width:200px;text-align:center;}
-.wish-item{margin-bottom:32px;cursor:pointer;transition:opacity 0.3s;}
-.wish-item:hover{opacity:0.85;}
-.wish-status{font-size:8px;letter-spacing:0.28em;margin-bottom:7px;}
-.wish-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:21px;color:#E8E4DA;line-height:1.2;margin-bottom:6px;}
-.wish-note{font-size:11px;font-style:italic;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(232,228,218,0.42);line-height:1.65;max-height:0;overflow:hidden;opacity:0;transition:max-height 0.4s,opacity 0.4s;}
-.wish-item:hover .wish-note{max-height:80px;opacity:1;}
-.wish-tick{height:1px;margin-top:8px;transition:width 0.6s cubic-bezier(0.34,1.1,0.64,1);}
-.wish-tick-r{height:1px;margin-top:8px;transition:width 0.6s cubic-bezier(0.34,1.1,0.64,1);margin-left:auto;}
+/* ══════════════════════════════════════
+   YOUTUBE EMBED OVERLAY (gallery)
+══════════════════════════════════════ */
+#yt-modal{display:none;position:fixed;inset:0;z-index:2000;background:rgba(6,6,14,0.96);align-items:center;justify-content:center;}
+#yt-modal.open{display:flex;}
+.yt-modal-inner{position:relative;width:90%;max-width:960px;aspect-ratio:16/9;}
+.yt-modal-inner iframe{width:100%;height:100%;border:none;}
+.yt-modal-close{position:absolute;top:-40px;right:0;font-size:11px;letter-spacing:0.3em;color:rgba(232,228,218,0.5);cursor:pointer;font-family:Georgia,serif;background:none;border:none;transition:color 0.3s;}
+.yt-modal-close:hover{color:#E8E4DA;}
 
-/* ═══════════════════════════
-   UNIVERSE FEED
-═══════════════════════════ */
-.feed-section{background:#08080F;padding:80px 48px;}
-.feed-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px;}
-.f-btn{font-size:8px;letter-spacing:0.25em;padding:6px 14px;border:1px solid rgba(232,228,218,0.12);background:transparent;color:rgba(232,228,218,0.4);cursor:pointer;font-family:Georgia,serif;transition:all 0.25s;}
-.f-btn:hover,.f-btn.active{border-color:rgba(232,228,218,0.4);color:#E8E4DA;background:rgba(232,228,218,0.05);}
-.feed-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.feed-card{border:1px solid rgba(232,228,218,0.08);padding:22px;transition:all 0.3s;cursor:pointer;position:relative;}
-.feed-card:hover{border-color:rgba(232,228,218,0.2);background:rgba(232,228,218,0.03);transform:translateY(-2px);}
-.feed-tag{font-size:7px;letter-spacing:0.26em;padding:2px 9px;border:1px solid;display:inline-block;margin-bottom:13px;}
-.feed-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:17px;color:#E8E4DA;line-height:1.3;margin-bottom:9px;}
-.feed-desc{font-size:11px;font-style:italic;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(232,228,218,0.42);line-height:1.65;margin-bottom:14px;}
-.feed-meta{display:flex;justify-content:space-between;border-top:1px solid rgba(232,228,218,0.06);padding-top:10px;font-size:8px;color:rgba(232,228,218,0.26);letter-spacing:0.15em;}
-.hot-badge{position:absolute;top:12px;right:12px;font-size:7px;letter-spacing:0.25em;padding:2px 7px;border:1px solid;}
-.feed-card-embed{border:1px solid rgba(232,228,218,0.08);padding:16px;transition:border-color 0.3s;position:relative;}
-.feed-card-embed:hover{border-color:rgba(232,228,218,0.2);background:rgba(232,228,218,0.03);}
-.feed-card-embed .twitter-tweet{margin:0!important;min-width:unset!important;max-width:100%!important;}
-.embed-label{font-size:7px;letter-spacing:0.26em;padding:2px 9px;border:1px solid;display:inline-block;margin-bottom:12px;}
-
-/* ═══════════════════════════
-   LUNAR LAB
-═══════════════════════════ */
-.lunar-lab{background:#0A0A16;padding:80px 48px;}
-.meme-grid{columns:3;column-gap:14px;margin-top:36px;}
-.meme-card{break-inside:avoid;margin-bottom:14px;border:1px solid rgba(232,228,218,0.07);padding:18px 16px;transition:all 0.3s;cursor:pointer;}
-.meme-card:hover{border-color:rgba(232,228,218,0.2);transform:translateY(-2px);}
-.meme-emoji{font-size:20px;margin-bottom:9px;display:block;}
-.meme-text{font-size:12px;font-style:italic;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(232,228,218,0.72);line-height:1.65;margin-bottom:11px;}
-.meme-foot{display:flex;justify-content:space-between;align-items:center;}
-.meme-tag{font-size:7px;letter-spacing:0.22em;padding:2px 7px;border:1px solid;}
-.meme-src{font-size:8px;color:rgba(232,228,218,0.25);}
-.hof-strip{display:flex;gap:14px;overflow-x:auto;padding-bottom:6px;margin-top:24px;}
-.hof-card{min-width:190px;border:1px solid rgba(127,191,184,0.14);padding:15px 16px;flex-shrink:0;cursor:pointer;transition:all 0.25s;}
-.hof-card:hover{border-color:rgba(127,191,184,0.38);}
-.submit-btn{font-size:8px;letter-spacing:0.3em;padding:9px 20px;border:1px solid rgba(127,191,184,0.38);background:transparent;color:#7FBFB8;cursor:pointer;font-family:Georgia,serif;transition:all 0.3s;}
-.submit-btn:hover{background:rgba(127,191,184,0.08);}
-
-/* ═══════════════════════════
-   CONNECT
-═══════════════════════════ */
-.connect{background:#06060E;padding:80px 48px;}
-.connect-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;max-width:1100px;margin:0 auto;}
-.mission-box{border:1px solid rgba(201,169,110,0.22);padding:28px;background:rgba(201,169,110,0.025);margin-bottom:22px;}
-.mission-pulse{width:6px;height:6px;border-radius:50%;background:#C9A96E;box-shadow:0 0 0 0 rgba(201,169,110,0.6);animation:mPulse 2s infinite;display:inline-block;}
-@keyframes mPulse{0%{box-shadow:0 0 0 0 rgba(201,169,110,0.6)}70%{box-shadow:0 0 0 8px rgba(201,169,110,0)}100%{box-shadow:0 0 0 0 rgba(201,169,110,0)}}
-.prog-track{height:1px;background:rgba(232,228,218,0.08);margin:14px 0;}
-.prog-fill{height:1px;transition:width 1.2s cubic-bezier(0.34,1,0.64,1);}
-.mission-step{font-size:10px;letter-spacing:0.18em;color:rgba(232,228,218,0.45);margin-bottom:7px;}
-.platform-row{border:1px solid rgba(232,228,218,0.09);padding:14px 18px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:all 0.25s;margin-bottom:9px;text-decoration:none;}
-.platform-row:hover{border-color:rgba(232,228,218,0.28);background:rgba(232,228,218,0.03);}
-
-/* ── FOOTER ── */
-.footer{border-top:1px solid rgba(232,228,218,0.06);padding:28px 48px;display:flex;justify-content:space-between;align-items:center;background:#06060E;}
-
-/* ── RESPONSIVE ── */
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
 @media(max-width:767px){
-  .desktop-only{display:none!important;}
-  .mobile-only{display:block!important;}
-  .feed-grid{grid-template-columns:1fr!important;}
-  .meme-grid{columns:2!important;}
-  .connect-grid{grid-template-columns:1fr!important;}
-  .wishes-grid{grid-template-columns:1fr!important;}
-  .wish-col-center{display:none;}
-  .metrics-row{gap:28px;}
+  #main-nav{padding:14px 20px;}
   .nav-links{display:none;}
-  .nav{padding:14px 20px;}
-  .chemistry,.wishes,.feed-section,.lunar-lab,.connect{padding:60px 20px;}
-  .divider{padding:0 20px;}
-  .footer{padding:20px;}
-  .footer-mid,.footer-right{display:none;}
+  .nav-hamburger{display:flex;}
+  #mobile-nav{display:block;}
+  #live-ticker{display:none;}
+  #hero{height:100svh;flex-direction:column;}
+  .h-side{flex:1!important;width:100%;}
+  #h-spine{display:none;}
+  #h-center{display:none;}
+  #h-cta{display:none;}
+  .h-name{font-size:clamp(42px,12vw,64px);}
+  .h-text-l,.h-text-r{padding:0 22px 60px;}
+  .h-text-r{text-align:left;}
+  .h-line-r{margin-left:0;}
+  .h-tags-r{justify-content:flex-start;}
+  #stats-bar .stats-inner{animation-duration:18s;}
+  .profile-grid,.profile-grid-r{grid-template-columns:1fr;padding:0 24px;gap:40px;}
+  .profile-grid-r .profile-photo-frame{order:0;}
+  #namtan,#film{padding:72px 0;}
+  #together{padding:72px 24px;}
+  .gr-showcase .gr-inner{grid-template-columns:1fr;}
+  .gr-left{border-right:none;border-bottom:1px solid rgba(232,228,218,0.07);padding:28px;}
+  .gr-right{padding:28px;}
+  .chem-stats{gap:28px;}
+  .fan-quotes{grid-template-columns:1fr;}
+  #media{padding:72px 20px;}
+  #gallery-grid{grid-template-columns:1fr;}
+  #feed{padding:72px 20px;}
+  .feed-header{flex-direction:column;align-items:flex-start;}
+  #footer{padding:52px 24px 100px;}
+  .footer-grid{grid-template-columns:1fr;gap:28px;}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center;}
+  .divider-row{padding:0 20px;}
 }
-@media(min-width:768px){
-  .mobile-only{display:none!important;}
-  .desktop-only{display:block!important;}
+@media(min-width:768px) and (max-width:1024px){
+  .profile-grid,.profile-grid-r{padding:0 36px;gap:48px;}
+  #gallery-grid{grid-template-columns:repeat(2,1fr);}
+  #together{padding:90px 40px;}
 }
-
-/* ── ANIMATIONS ── */
-@keyframes livePulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(0.5);opacity:0.3}}
-@keyframes floatStar{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 7px))}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-.fade-up{opacity:0;}
-.fade-up.visible{animation:fadeUp 0.9s cubic-bezier(0.34,1,0.64,1) forwards;}
 </style>
 </head>
 <body>
 
-<div class="app" id="app">
+<!-- ══ STAR FIELD (fixed bg) ══ -->
 <div id="starfield" style="position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;"></div>
 
-<!-- NAV -->
-<nav class="nav desktop-only" id="main-nav">
-  <div class="nav-logo">✦ NamtanFilm</div>
+<!-- ══ NAV ══ -->
+<nav id="main-nav">
+  <div class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">✦ NamtanFilm</div>
   <div class="nav-links">
-    <button class="nav-link" onclick="scrollTo('#chemistry')">NAMTAN</button>
-    <button class="nav-link" onclick="scrollTo('#chemistry')">FILM</button>
-    <button class="nav-link" onclick="scrollTo('#chemistry')">#NAMTANFILM</button>
-    <button class="nav-link" onclick="scrollTo('#gallery')">GALLERY</button>
-    <button class="nav-link" onclick="scrollTo('#feed')">UNIVERSE</button>
-    <button class="nav-link" onclick="scrollTo('#wishes')">WISHES</button>
-    <button class="nav-link" onclick="scrollTo('#connect')">CONNECT</button>
+    <button class="nav-link" onclick="scrollTo('#namtan')">NAMTAN</button>
+    <button class="nav-link" onclick="scrollTo('#film')">FILM</button>
+    <button class="nav-link" onclick="scrollTo('#together')">TOGETHER</button>
+    <button class="nav-link" onclick="scrollTo('#media')">MEDIA</button>
+    <button class="nav-link" onclick="scrollTo('#feed')">FEED</button>
   </div>
-  <button class="nav-cta">LUNARS ↗</button>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<!-- ══ DESKTOP HERO ══ -->
-<div class="d-hero desktop-only section" id="hero">
-  <div id="d-sf" style="position:absolute;inset:0;pointer-events:none;z-index:2;overflow:hidden;"></div>
+<!-- ══ MOBILE DRAWER ══ -->
+<div id="mobile-drawer">
+  <button class="drawer-link" onclick="scrollTo('#namtan');toggleDrawer()">🌙 NAMTAN</button>
+  <button class="drawer-link" onclick="scrollTo('#film');toggleDrawer()">🌟 FILM</button>
+  <button class="drawer-link" onclick="scrollTo('#together');toggleDrawer()">✦ TOGETHER</button>
+  <button class="drawer-link" onclick="scrollTo('#media');toggleDrawer()">◈ MEDIA</button>
+  <button class="drawer-link" onclick="scrollTo('#feed');toggleDrawer()">📰 FEED</button>
+</div>
 
-  <!-- NAMTAN -->
-  <div class="d-side" id="dn" onmouseenter="dh('n')" onmouseleave="dh(null)">
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,#1a1408,#0D0D1A);" id="dph-n">
-      <svg viewBox="0 0 100 160" style="position:absolute;top:8%;left:50%;transform:translateX(-50%);width:42%;opacity:0.06;fill:#C9A96E;"><ellipse cx="50" cy="36" rx="28" ry="30"/><path d="M5,160 Q5,90 50,86 Q95,90 95,160 Z"/></svg>
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div id="h-starfield" style="position:absolute;inset:0;pointer-events:none;z-index:2;overflow:hidden;"></div>
+
+  <!-- NAMTAN SIDE -->
+  <div class="h-side" id="hs-n" onmouseenter="heroHover('n')" onmouseleave="heroHover(null)">
+    <div class="h-placeholder" id="hph-n" style="background:linear-gradient(160deg,#181008,#0D0D1A);">
+      <svg viewBox="0 0 100 160" style="position:absolute;top:10%;left:50%;transform:translateX(-50%);width:40%;opacity:0.055;fill:#C9A96E;"><ellipse cx="50" cy="36" rx="28" ry="30"/><path d="M5,160 Q5,90 50,86 Q95,90 95,160 Z"/></svg>
     </div>
-    <img class="d-photo" id="di-n" src="https://img.youtube.com/vi/YWkIBHRFDHc/maxresdefault.jpg" alt="Namtan © GMMTV" style="opacity:0;object-position:30% center;" onload="diLoad('n')" onerror="this.style.display='none'"/>
-    <div class="d-yt-overlay" id="dyt-n" style="display:none;"><iframe src="" id="dyt-iframe-n" allow="autoplay;fullscreen" allowfullscreen></iframe></div>
-    <div class="d-play-btn" onclick="playHeroYT('n','YWkIBHRFDHc')" title="Watch on YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="#E8E4DA"><path d="M8 5v14l11-7z"/></svg></div>
-    <div class="d-glow-n"></div><div class="d-grad-n"></div><div class="d-grad-top"></div><div class="d-merge-n"></div>
-    <div style="position:absolute;top:76px;left:28px;font-size:8px;letter-spacing:0.38em;color:rgba(201,169,110,0.62);font-style:italic;font-family:'Cormorant Garamond',Georgia,serif;">✦ TIPNAREE WEERAWATNODOM</div>
-    <div class="d-badge" id="db-n" style="right:28px;text-align:right;opacity:0;transform:translateY(-8px);">
-      <div class="d-badge-val" style="color:#C9A96E;">3M</div>
-      <div class="d-badge-lbl" style="color:rgba(201,169,110,0.5);">INSTAGRAM</div>
-    </div>
-    <div class="d-text-n">
-      <div class="d-tags" id="dt-n" style="opacity:0;transform:translateY(10px);">
-        <span class="d-tag" style="color:rgba(201,169,110,0.6);border-color:rgba(201,169,110,0.25);">PRADA</span>
-        <span class="d-tag" style="color:rgba(201,169,110,0.6);border-color:rgba(201,169,110,0.25);">GIVENCHY</span>
-        <span class="d-tag" style="color:rgba(201,169,110,0.6);border-color:rgba(201,169,110,0.25);">GUCCI</span>
+    <img class="h-photo" id="hi-n" src="https://img.youtube.com/vi/YWkIBHRFDHc/maxresdefault.jpg" alt="Namtan Tipnaree © GMMTV" style="object-position:32% center;" onload="heroImgLoad('n')" onerror="this.style.display='none'"/>
+    <div class="h-yt-overlay" id="hyt-n"><iframe id="hyt-iframe-n" src="" allow="autoplay;fullscreen" allowfullscreen></iframe></div>
+    <div class="h-glow-gold"></div>
+    <div class="h-grad-gold"></div>
+    <div class="h-grad-top"></div>
+    <div class="h-merge-l"></div>
+    <div style="position:absolute;top:80px;left:30px;font-size:8px;letter-spacing:0.4em;color:rgba(201,169,110,0.55);font-style:italic;font-family:'Cormorant Garamond',Georgia,serif;z-index:8;">✦ TIPNAREE WEERAWATNODOM</div>
+    <button class="h-play" onclick="heroPlay('n','YWkIBHRFDHc')" title="Watch trailer">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#E8E4DA"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+    <div class="h-text-l">
+      <div class="h-tags" id="htag-n">
+        <span class="h-tag" style="color:rgba(201,169,110,0.65);border-color:rgba(201,169,110,0.25);">PRADA</span>
+        <span class="h-tag" style="color:rgba(201,169,110,0.65);border-color:rgba(201,169,110,0.25);">GIVENCHY</span>
+        <span class="h-tag" style="color:rgba(201,169,110,0.65);border-color:rgba(201,169,110,0.25);">GUCCI</span>
       </div>
-      <div class="d-role">ACTRESS · MODEL · ICON</div>
-      <div class="d-name" id="dn-name" style="opacity:0;transform:translateY(20px);">Namtan</div>
-      <div class="d-line-n" id="dl-n" style="width:28px;"></div>
-      <div class="d-quote" id="dq-n" style="opacity:0;transform:translateY(8px);">"At 29, happiness is really the little things."</div>
+      <div class="h-role">ACTRESS · MODEL · ICON</div>
+      <div class="h-name" id="hn-n">Namtan</div>
+      <div class="h-line-l" id="hl-n"></div>
+      <div class="h-quote">"At 29, happiness is really the little things."</div>
     </div>
-    <div class="cpright" style="right:8px;color:rgba(201,169,110,0.25);opacity:0;" id="dc-n">© GMMTV · Girl Rules 2026</div>
+    <div class="h-cr" style="right:9px;">&copy; GMMTV · Girl Rules 2026</div>
   </div>
 
   <!-- SPINE -->
-  <div class="d-spine" id="d-spine"><div class="spine-star"></div></div>
+  <div id="h-spine">
+    <div class="spine-dot"></div>
+  </div>
+  <div id="h-center">
+    <div style="font-size:7px;letter-spacing:0.55em;color:rgba(232,228,218,0.18);margin-bottom:8px;">✦ THE UNIVERSE OF</div>
+    <div class="corm" style="font-size:clamp(14px,2vw,22px);color:rgba(232,228,218,0.78);letter-spacing:0.2em;">#NamtanFilm</div>
+    <div style="font-size:7px;letter-spacing:0.36em;color:rgba(232,228,218,0.16);margin-top:7px;">LUNARS · 6.7M ENGAGEMENTS</div>
+  </div>
 
-  <!-- FILM -->
-  <div class="d-side" id="df" onmouseenter="dh('f')" onmouseleave="dh(null)">
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,#070D0E,#0D0D1A);" id="dph-f">
-      <svg viewBox="0 0 100 160" style="position:absolute;top:8%;left:50%;transform:translateX(-50%);width:42%;opacity:0.06;fill:#7FBFB8;"><ellipse cx="50" cy="36" rx="28" ry="30"/><path d="M5,160 Q5,90 50,86 Q95,90 95,160 Z"/></svg>
+  <!-- FILM SIDE -->
+  <div class="h-side" id="hs-f" onmouseenter="heroHover('f')" onmouseleave="heroHover(null)">
+    <div class="h-placeholder" id="hph-f" style="background:linear-gradient(160deg,#060D0E,#0D0D1A);">
+      <svg viewBox="0 0 100 160" style="position:absolute;top:10%;left:50%;transform:translateX(-50%);width:40%;opacity:0.055;fill:#7FBFB8;"><ellipse cx="50" cy="36" rx="28" ry="30"/><path d="M5,160 Q5,90 50,86 Q95,90 95,160 Z"/></svg>
     </div>
-    <img class="d-photo" id="di-f" src="https://img.youtube.com/vi/XoZ7P9kEWKU/maxresdefault.jpg" alt="Film © GMMTV" style="opacity:0;object-position:68% center;" onload="diLoad('f')" onerror="this.style.display='none'"/>
-    <div class="d-yt-overlay" id="dyt-f" style="display:none;"><iframe src="" id="dyt-iframe-f" allow="autoplay;fullscreen" allowfullscreen></iframe></div>
-    <div class="d-play-btn" onclick="playHeroYT('f','XoZ7P9kEWKU')" title="Watch on YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="#E8E4DA"><path d="M8 5v14l11-7z"/></svg></div>
-    <div class="d-glow-f"></div><div class="d-grad-f"></div><div class="d-grad-top"></div><div class="d-merge-f"></div>
-    <div style="position:absolute;top:76px;right:28px;font-size:8px;letter-spacing:0.38em;color:rgba(127,191,184,0.62);font-style:italic;font-family:'Cormorant Garamond',Georgia,serif;text-align:right;">RACHANUN MAHAWAN ✦</div>
-    <div class="d-badge" id="db-f" style="left:28px;text-align:left;opacity:0;transform:translateY(-8px);">
-      <div class="d-badge-val" style="color:#7FBFB8;">18%</div>
-      <div class="d-badge-lbl" style="color:rgba(127,191,184,0.5);">ENGAGEMENT · GLOBAL #3589</div>
-    </div>
-    <div class="d-text-f">
-      <div class="d-tags-r" id="dt-f" style="opacity:0;transform:translateY(10px);">
-        <span class="d-tag" style="color:rgba(127,191,184,0.6);border-color:rgba(127,191,184,0.25);">POLO RALPH LAUREN</span>
-        <span class="d-tag" style="color:rgba(127,191,184,0.6);border-color:rgba(127,191,184,0.25);">SEOUL AWARD</span>
+    <img class="h-photo" id="hi-f" src="https://img.youtube.com/vi/XoZ7P9kEWKU/maxresdefault.jpg" alt="Film Rachanun © GMMTV" style="object-position:66% center;" onload="heroImgLoad('f')" onerror="this.style.display='none'"/>
+    <div class="h-yt-overlay" id="hyt-f"><iframe id="hyt-iframe-f" src="" allow="autoplay;fullscreen" allowfullscreen></iframe></div>
+    <div class="h-glow-teal"></div>
+    <div class="h-grad-teal"></div>
+    <div class="h-grad-top"></div>
+    <div class="h-merge-r"></div>
+    <div style="position:absolute;top:80px;right:30px;font-size:8px;letter-spacing:0.4em;color:rgba(127,191,184,0.55);font-style:italic;font-family:'Cormorant Garamond',Georgia,serif;text-align:right;z-index:8;">RACHANUN MAHAWAN ✦</div>
+    <button class="h-play" onclick="heroPlay('f','XoZ7P9kEWKU')" title="Watch trailer">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#E8E4DA"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+    <div class="h-text-r">
+      <div class="h-tags-r" id="htag-f">
+        <span class="h-tag" style="color:rgba(127,191,184,0.65);border-color:rgba(127,191,184,0.25);">POLO RALPH LAUREN</span>
+        <span class="h-tag" style="color:rgba(127,191,184,0.65);border-color:rgba(127,191,184,0.25);">SEOUL AWARD</span>
       </div>
-      <div class="d-role">ACTRESS · ARTIST · AWARD WINNER</div>
-      <div class="d-name" id="df-name" style="opacity:0;transform:translateY(20px);">Film</div>
-      <div class="d-line-f" id="dl-f" style="width:28px;"></div>
-      <div class="d-quote" id="dq-f" style="opacity:0;transform:translateY(8px);margin-left:auto;">"Bambi was far from who I am — and that's why I loved her."</div>
+      <div class="h-role">ACTRESS · ARTIST · AWARD WINNER</div>
+      <div class="h-name" id="hn-f">Film</div>
+      <div class="h-line-r" id="hl-f"></div>
+      <div class="h-quote" style="margin-left:auto;">"Bambi was far from who I am — and that's why I loved her."</div>
     </div>
-    <div class="cpright" style="left:8px;color:rgba(127,191,184,0.25);opacity:0;" id="dc-f">© GMMTV · Girl Rules 2026</div>
+    <div class="h-cr" style="left:9px;">&copy; GMMTV · Girl Rules 2026</div>
   </div>
 
-  <!-- CENTER -->
-  <div class="d-center" id="d-center">
-    <div style="font-size:8px;letter-spacing:0.55em;color:rgba(232,228,218,0.2);margin-bottom:9px;">✦ THE UNIVERSE OF</div>
-    <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(15px,2.2vw,24px);font-weight:300;color:rgba(232,228,218,0.8);letter-spacing:0.2em;">#NamtanFilm</div>
-    <div style="font-size:7px;letter-spacing:0.38em;color:rgba(232,228,218,0.17);margin-top:9px;">LUNARS · 6.7M ENGAGEMENTS</div>
+  <!-- bottom CTA -->
+  <div id="h-cta">
+    <button class="h-cta-btn" style="color:rgba(201,169,110,0.72);border-color:rgba(201,169,110,0.26);" onmouseover="this.style.background='rgba(201,169,110,0.09)'" onmouseout="this.style.background='transparent'">I'M A LUNAR 🌙</button>
+    <span style="color:rgba(232,228,218,0.15);font-size:10px;">·</span>
+    <button class="h-cta-btn" style="color:rgba(127,191,184,0.72);border-color:rgba(127,191,184,0.26);" onmouseover="this.style.background='rgba(127,191,184,0.09)'" onmouseout="this.style.background='transparent'" onclick="scrollTo('#together')">GIRL RULES ✦</button>
   </div>
-  <div class="d-cta-row">
-    <button class="d-cta-btn" style="color:rgba(201,169,110,0.72);border-color:rgba(201,169,110,0.26);" onmouseover="this.style.background='rgba(201,169,110,0.09)'" onmouseout="this.style.background='transparent'">I'M A LUNAR 🌙</button>
-    <span style="color:rgba(232,228,218,0.18);font-size:10px;">·</span>
-    <button class="d-cta-btn" style="color:rgba(127,191,184,0.72);border-color:rgba(127,191,184,0.26);" onmouseover="this.style.background='rgba(127,191,184,0.09)'" onmouseout="this.style.background='transparent'">BRAND & PRESS ✦</button>
-  </div>
+</section>
+
+<!-- ══ STATS BAR ══ -->
+<div id="stats-bar">
+  <div class="stats-inner" id="stats-inner"></div>
 </div>
 
-<!-- ══ MOBILE HERO ══ -->
-<div class="mobile-only">
-  <div class="m-hero" id="m-hero">
-    <div id="m-sf" style="position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden;"></div>
-    <div class="m-topbar">
-      <div class="m-logo">✦ NamtanFilm</div>
-      <div class="m-live"><span class="live-dot" style="background:#C9A96E;box-shadow:0 0 6px #C9A96E;"></span>GIRL RULES · EP.2</div>
+<!-- ══ DIVIDER ══ -->
+<div class="divider-row" style="padding:36px 60px;"><div class="div-line" style="background:linear-gradient(to right,transparent,rgba(201,169,110,0.15));"></div><div class="div-label" style="color:rgba(201,169,110,0.4);">🌙 namtan tipnaree</div><div class="div-line" style="background:linear-gradient(to left,transparent,rgba(201,169,110,0.15));"></div></div>
+
+<!-- ══ NAMTAN PROFILE ══ -->
+<section id="namtan" class="section fade-up">
+  <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden;opacity:0.12;" id="namtan-stars"></div>
+  <div class="profile-grid">
+    <!-- Photo -->
+    <div class="profile-photo-frame">
+      <div class="profile-photo-wrap">
+        <img src="https://img.youtube.com/vi/YWkIBHRFDHc/maxresdefault.jpg" alt="Namtan Tipnaree © GMMTV" style="object-position:30% top;" onload="this.style.opacity=1" onerror="this.style.display='none'" style="opacity:0;transition:opacity 1.2s ease;"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,20,0.6),transparent 50%);pointer-events:none;"></div>
+        <div class="corner corner-tl" style="border-color:rgba(201,169,110,0.4);"></div>
+        <div class="corner corner-tr" style="border-color:rgba(201,169,110,0.4);"></div>
+        <div class="corner corner-bl" style="border-color:rgba(201,169,110,0.4);"></div>
+        <div class="corner corner-br" style="border-color:rgba(201,169,110,0.4);"></div>
+      </div>
+      <div class="profile-photo-num" style="color:#C9A96E;">01</div>
     </div>
-    <div class="progress-dots" id="m-dots"></div>
-    <div class="card-stack" id="card-stack"></div>
-    <div class="swipe-btns">
-      <button class="s-btn skip" onclick="trigSwipe('left')" title="Skip">✕</button>
-      <button class="s-btn info" onclick="trigSwipe('info')">✦</button>
-      <button class="s-btn love" onclick="trigSwipe('right')" title="Love">♡</button>
+    <!-- Text -->
+    <div class="profile-text">
+      <div class="sec-eyebrow" style="color:rgba(201,169,110,0.6);">🌙 NAMTAN TIPNAREE</div>
+      <div class="sec-title" style="font-size:clamp(40px,5.5vw,68px);line-height:0.88;margin-bottom:14px;">Namtan<br><span style="color:#C9A96E;">Tipnaree</span></div>
+      <div style="font-size:8px;letter-spacing:0.36em;color:rgba(232,228,218,0.35);margin-bottom:22px;">ACTRESS · MODEL · ICON</div>
+      <div style="height:1px;background:linear-gradient(to right,#C9A96E,transparent);width:48px;margin-bottom:24px;"></div>
+      <p class="profile-bio">Born Tipnaree Weerawatnodom, Namtan has spent over a decade building one of Thai entertainment's most elegant careers. From Pluto to Girl Rules, she inhabits every role with an effortless gravity that makes the screen lean toward her. Off-screen, the fashion world agrees — Prada front-row seats, Givenchy campaigns, Gucci invitations. The named global ambassadorship is only a matter of time.</p>
+      <div class="brand-tags" style="margin-top:24px;">
+        <span class="brand-tag" style="color:rgba(201,169,110,0.65);border-color:rgba(201,169,110,0.25);">PRADA</span>
+        <span class="brand-tag" style="color:rgba(201,169,110,0.65);border-color:rgba(201,169,110,0.25);">GIVENCHY</span>
+        <span class="brand-tag" style="color:rgba(201,169,110,0.65);border-color:rgba(201,169,110,0.25);">GUCCI</span>
+        <span class="brand-tag" style="color:rgba(201,169,110,0.65);border-color:rgba(201,169,110,0.25);">MAX MARA</span>
+      </div>
+      <div class="profile-stat-row">
+        <div class="profile-stat">
+          <div class="profile-stat-val" style="color:#C9A96E;">3M</div>
+          <div class="profile-stat-lbl">INSTAGRAM</div>
+        </div>
+        <div class="profile-stat">
+          <div class="profile-stat-val" style="color:#C9A96E;">3.2M</div>
+          <div class="profile-stat-lbl">TIKTOK</div>
+        </div>
+        <div class="profile-stat">
+          <div class="profile-stat-val" style="color:#C9A96E;">12+</div>
+          <div class="profile-stat-lbl">YEARS CAREER</div>
+        </div>
+      </div>
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="https://instagram.com/namtan.tipnaree" target="_blank" rel="noopener" style="font-size:8px;letter-spacing:0.28em;color:#C9A96E;border:1px solid rgba(201,169,110,0.35);padding:8px 18px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='rgba(201,169,110,0.08)'" onmouseout="this.style.background='transparent'">INSTAGRAM ↗</a>
+        <button onclick="scrollTo('#together')" style="font-size:8px;letter-spacing:0.28em;color:rgba(232,228,218,0.45);border:1px solid rgba(232,228,218,0.14);padding:8px 18px;background:transparent;cursor:pointer;font-family:Georgia,serif;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(232,228,218,0.35)';this.style.color='#E8E4DA'" onmouseout="this.style.borderColor='rgba(232,228,218,0.14)';this.style.color='rgba(232,228,218,0.45)'">GIRL RULES ✦</button>
+      </div>
     </div>
-    <div class="swipe-hint" id="m-hint">← SKIP · DRAG TO VOTE · LOVE ♡ →</div>
   </div>
-  <!-- Vote panel -->
-  <div class="vote-panel" id="vote-panel">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-      <div class="cormorant" style="font-size:19px;color:#E8E4DA;">Fan Vote — This Week's Cover</div>
-      <div style="font-size:8px;letter-spacing:0.22em;color:rgba(232,228,218,0.3);" id="v-total">0 votes</div>
+</section>
+
+<!-- ══ DIVIDER ══ -->
+<div class="divider-row" style="padding:36px 60px;"><div class="div-line" style="background:linear-gradient(to right,transparent,rgba(127,191,184,0.15));"></div><div class="div-label" style="color:rgba(127,191,184,0.4);">🌟 film rachanun</div><div class="div-line" style="background:linear-gradient(to left,transparent,rgba(127,191,184,0.15));"></div></div>
+
+<!-- ══ FILM PROFILE ══ -->
+<section id="film" class="section fade-up">
+  <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden;opacity:0.1;" id="film-stars"></div>
+  <div class="profile-grid-r">
+    <!-- Text (left) -->
+    <div class="profile-text">
+      <div class="sec-eyebrow" style="color:rgba(127,191,184,0.6);">🌟 FILM RACHANUN</div>
+      <div class="sec-title" style="font-size:clamp(40px,5.5vw,68px);line-height:0.88;margin-bottom:14px;">Film<br><span style="color:#7FBFB8;">Rachanun</span></div>
+      <div style="font-size:8px;letter-spacing:0.36em;color:rgba(232,228,218,0.35);margin-bottom:22px;">ACTRESS · ARTIST · AWARD WINNER</div>
+      <div style="height:1px;background:linear-gradient(to right,#7FBFB8,transparent);width:48px;margin-bottom:24px;"></div>
+      <div class="award-pill">
+        <span class="award-pill-star">★</span>
+        <span class="award-pill-text">SEOUL DRAMA AWARDS · OUTSTANDING ASIAN STAR</span>
+      </div>
+      <p class="profile-bio">Film Rachanun Mahawan carries an 18% engagement rate that puts her in the top tier of Thai actresses globally — and she earned it the hard way, one unforgettable performance at a time. As Bambi in Girl Rules, she plays a woman chasing someone she once had to leave behind. Off-screen, Polo Ralph Lauren and Paris Fashion Week have made their feelings clear. The West is only beginning to discover what the Lunars have always known.</p>
+      <div class="brand-tags" style="margin-top:22px;">
+        <span class="brand-tag" style="color:rgba(127,191,184,0.65);border-color:rgba(127,191,184,0.25);">POLO RALPH LAUREN</span>
+        <span class="brand-tag" style="color:rgba(127,191,184,0.65);border-color:rgba(127,191,184,0.25);">PARIS FASHION WEEK</span>
+        <span class="brand-tag" style="color:rgba(127,191,184,0.65);border-color:rgba(127,191,184,0.25);">GMMTV</span>
+      </div>
+      <div class="profile-stat-row">
+        <div class="profile-stat">
+          <div class="profile-stat-val" style="color:#7FBFB8;">1.4M</div>
+          <div class="profile-stat-lbl">INSTAGRAM</div>
+        </div>
+        <div class="profile-stat">
+          <div class="profile-stat-val" style="color:#7FBFB8;">18%</div>
+          <div class="profile-stat-lbl">ENG. RATE</div>
+        </div>
+        <div class="profile-stat">
+          <div class="profile-stat-val" style="color:#7FBFB8;">★1</div>
+          <div class="profile-stat-lbl">SEOUL AWARD</div>
+        </div>
+      </div>
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="https://instagram.com/fr.racha" target="_blank" rel="noopener" style="font-size:8px;letter-spacing:0.28em;color:#7FBFB8;border:1px solid rgba(127,191,184,0.35);padding:8px 18px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='rgba(127,191,184,0.08)'" onmouseout="this.style.background='transparent'">INSTAGRAM ↗</a>
+        <button onclick="scrollTo('#together')" style="font-size:8px;letter-spacing:0.28em;color:rgba(232,228,218,0.45);border:1px solid rgba(232,228,218,0.14);padding:8px 18px;background:transparent;cursor:pointer;font-family:Georgia,serif;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(232,228,218,0.35)';this.style.color='#E8E4DA'" onmouseout="this.style.borderColor='rgba(232,228,218,0.14)';this.style.color='rgba(232,228,218,0.45)'">GIRL RULES ✦</button>
+      </div>
     </div>
-    <div id="v-bars"></div>
-    <div id="v-winner" style="display:none;">
-      <div style="font-size:8px;letter-spacing:0.28em;color:rgba(201,169,110,0.6);margin-bottom:10px;">✦ CURRENT LEADER</div>
-      <div class="winner-card">
-        <img id="w-thumb" class="winner-thumb" src="" alt=""/>
-        <div>
-          <div style="font-size:7px;letter-spacing:0.28em;color:rgba(201,169,110,0.65);margin-bottom:4px;">THIS WEEK'S COVER</div>
-          <div class="cormorant" style="font-size:16px;color:#E8E4DA;" id="w-name">—</div>
-          <div style="font-size:9px;color:rgba(232,228,218,0.38);margin-top:3px;" id="w-votes">—</div>
+    <!-- Photo (right) -->
+    <div class="profile-photo-frame">
+      <div class="profile-photo-wrap">
+        <img src="https://img.youtube.com/vi/XoZ7P9kEWKU/maxresdefault.jpg" alt="Film Rachanun © GMMTV" style="object-position:66% top;opacity:0;transition:opacity 1.2s ease;" onload="this.style.opacity=1" onerror="this.style.display='none'"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,13,14,0.6),transparent 50%);pointer-events:none;"></div>
+        <div class="corner corner-tl" style="border-color:rgba(127,191,184,0.4);"></div>
+        <div class="corner corner-tr" style="border-color:rgba(127,191,184,0.4);"></div>
+        <div class="corner corner-bl" style="border-color:rgba(127,191,184,0.4);"></div>
+        <div class="corner corner-br" style="border-color:rgba(127,191,184,0.4);"></div>
+      </div>
+      <div class="profile-photo-num" style="color:#7FBFB8;">02</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TOGETHER / CHEMISTRY ══ -->
+<section id="together" class="section fade-up">
+  <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden;opacity:0.15;" id="together-stars"></div>
+  <div style="max-width:900px;margin:0 auto;position:relative;z-index:2;">
+    <div class="sec-eyebrow" style="text-align:center;">✦ THE UNIVERSE OF</div>
+    <div class="together-names">
+      <div class="corm" style="font-size:clamp(48px,8vw,100px);color:#E8D5A8;line-height:0.85;letter-spacing:-0.03em;">Namtan</div>
+      <div class="together-sep">·</div>
+      <div class="corm" style="font-size:clamp(48px,8vw,100px);color:#A8D8D3;line-height:0.85;letter-spacing:-0.03em;">Film</div>
+    </div>
+    <div style="font-size:clamp(10px,1.3vw,13px);letter-spacing:0.52em;color:rgba(232,228,218,0.32);margin-bottom:6px;">#NAMTANFILM</div>
+    <div class="corm-i" style="font-size:14px;color:rgba(232,228,218,0.28);letter-spacing:0.04em;">Two stars. One sky. Infinite chemistry.</div>
+
+    <!-- Girl Rules Showcase -->
+    <div class="gr-showcase">
+      <div class="gr-inner">
+        <div class="gr-left">
+          <div style="font-size:8px;letter-spacing:0.44em;color:rgba(232,228,218,0.3);margin-bottom:16px;">◈ NOW STREAMING</div>
+          <div class="corm" style="font-size:clamp(28px,4vw,42px);color:#E8E4DA;line-height:1;margin-bottom:8px;">Girl Rules</div>
+          <div style="font-size:8px;letter-spacing:0.3em;color:rgba(232,228,218,0.35);margin-bottom:18px;">2026 · 12 EPISODES · GMM25 · iQIYI</div>
+          <p style="font-size:12px;font-style:italic;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(232,228,218,0.5);line-height:1.75;margin-bottom:22px;">Prim — the unshakeable fashion director. Bambi — the photographer who once broke her. When Bambi walks back into Prim's life as a client, the rules of professionalism start bending.</p>
+          <div style="display:flex;gap:9px;flex-wrap:wrap;margin-bottom:22px;">
+            <span style="font-size:7px;letter-spacing:0.26em;padding:3px 9px;border:1px solid rgba(201,169,110,0.28);color:rgba(201,169,110,0.65);">NAMTAN as PRIM</span>
+            <span style="font-size:7px;letter-spacing:0.26em;padding:3px 9px;border:1px solid rgba(127,191,184,0.28);color:rgba(127,191,184,0.65);">FILM as BAMBI</span>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="https://www.iq.com/album/girl-rules-2026-bq3bb5fj2h" target="_blank" rel="noopener" style="font-size:8px;letter-spacing:0.26em;color:#E8E4DA;border:1px solid rgba(232,228,218,0.28);padding:8px 16px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='rgba(232,228,218,0.06)'" onmouseout="this.style.background='transparent'">STREAM ON iQIYI ↗</a>
+            <a href="https://www.youtube.com/@GMMTV" target="_blank" rel="noopener" style="font-size:8px;letter-spacing:0.26em;color:rgba(232,228,218,0.45);border:1px solid rgba(232,228,218,0.12);padding:8px 16px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(232,228,218,0.35)';this.style.color='#E8E4DA'" onmouseout="this.style.borderColor='rgba(232,228,218,0.12)';this.style.color='rgba(232,228,218,0.45)'">GMMTV ↗</a>
+          </div>
+        </div>
+        <div class="gr-right">
+          <div class="gr-thumb" onclick="openYTModal('YWkIBHRFDHc')" title="Watch Girl Rules Trailer">
+            <img src="https://img.youtube.com/vi/YWkIBHRFDHc/maxresdefault.jpg" alt="Girl Rules Trailer © GMMTV" style="opacity:0;transition:opacity 1s;" onload="this.style.opacity=1" onerror="this.src='https://img.youtube.com/vi/YWkIBHRFDHc/hqdefault.jpg'"/>
+            <div class="gr-play">
+              <div class="gr-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="#E8E4DA"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+            <div style="position:absolute;bottom:12px;left:12px;font-size:7px;letter-spacing:0.28em;color:rgba(232,228,218,0.6);font-family:Georgia,serif;">▶ OFFICIAL TRAILER</div>
+          </div>
+          <div style="margin-top:18px;padding:16px;border:1px solid rgba(232,228,218,0.07);background:rgba(232,228,218,0.02);">
+            <div style="font-size:8px;letter-spacing:0.32em;color:rgba(232,228,218,0.28);margin-bottom:10px;">STREAMING INFO</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+              <div style="font-size:10px;color:rgba(232,228,218,0.5);font-family:'Cormorant Garamond',Georgia,serif;">GMM25</div>
+              <div style="font-size:10px;color:rgba(232,228,218,0.5);font-family:'Cormorant Garamond',Georgia,serif;">iQIYI</div>
+              <div style="font-size:9px;color:rgba(232,228,218,0.28);">Every Monday · 20:30 ICT</div>
+              <div style="font-size:9px;color:rgba(232,228,218,0.28);">International stream</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- ══ CHEMISTRY ══ -->
-<div class="chemistry section fade-up" id="chemistry">
-  <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden;opacity:0.18;" id="chem-stars"></div>
-  <div style="max-width:900px;margin:0 auto;position:relative;z-index:2;">
-    <div class="section-eyebrow">✦ THE CHEMISTRY OF A GENERATION</div>
-    <div class="chem-names">
-      <div class="cormorant" style="font-size:clamp(52px,9vw,110px);color:#E8D5A8;line-height:0.85;letter-spacing:-0.03em;">Namtan</div>
-      <div class="cormorant" style="font-size:clamp(22px,3vw,36px);color:rgba(232,228,218,0.3);padding:0 18px;letter-spacing:0.15em;">·</div>
-      <div class="cormorant" style="font-size:clamp(52px,9vw,110px);color:#A8D8D3;line-height:0.85;letter-spacing:-0.03em;">Film</div>
-    </div>
-    <div style="font-size:clamp(11px,1.4vw,15px);letter-spacing:0.5em;color:rgba(232,228,218,0.35);margin-bottom:8px;">#NAMTANFILM</div>
-    <div class="cormorant" style="font-size:14px;font-style:italic;color:rgba(232,228,218,0.3);letter-spacing:0.05em;">Two stars. One sky. Infinite chemistry.</div>
-    <div class="metrics-row">
-      <div class="metric-item"><div class="metric-val" style="color:#C9A96E;">4.4M+</div><div class="metric-lbl">COMBINED REACH</div></div>
-      <div class="metric-item"><div class="metric-val" style="color:#E8E4DA;">6.7M</div><div class="metric-lbl">PAIR ENGAGEMENTS</div></div>
-      <div class="metric-item"><div class="metric-val" style="color:#7FBFB8;">18%</div><div class="metric-lbl">FILM'S ENG. RATE</div></div>
-      <div class="metric-item"><div class="metric-val" style="color:#E8D5A8;">Lunars</div><div class="metric-lbl">OFFICIAL FANDOM</div></div>
-    </div>
-    <div class="chem-line" id="chem-line" style="width:0%;"></div>
-  </div>
-</div>
-
-<!-- ══ STAR WISHES ══ -->
-<div class="wishes section fade-up" id="wishes">
-  <div style="max-width:1100px;margin:0 auto;position:relative;z-index:2;">
-    <div style="text-align:center;margin-bottom:64px;">
-      <div class="section-eyebrow">✦ THE CONSTELLATION OF WISHES ✦</div>
-      <div class="cormorant" style="font-size:clamp(32px,5vw,58px);color:#E8E4DA;">Star Wishes 2026</div>
-    </div>
-    <div class="wishes-grid">
-      <div class="wish-col" style="border-right:1px solid rgba(232,228,218,0.1);">
-        <div style="font-size:8px;letter-spacing:0.38em;color:#C9A96E;margin-bottom:28px;">🌙 NAMTAN</div>
-        <div class="wish-item"><div class="wish-status" style="color:#C9A96E;">● AIRING NOW ✓</div><div class="wish-title">Girl Rules</div><div class="wish-note">Her most complex role yet. Prim — the fashion director who can't escape her past.</div><div class="wish-tick" style="background:linear-gradient(to right,#C9A96E,transparent);width:20px;"></div></div>
-        <div class="wish-item"><div class="wish-status" style="color:rgba(232,228,218,0.35);">✦ IN ORBIT</div><div class="wish-title">The Feature Film</div><div class="wish-note">12 years of craft. The cinema screen is waiting. The door is closer than ever.</div><div class="wish-tick" style="background:linear-gradient(to right,#C9A96E,transparent);width:20px;"></div></div>
-        <div class="wish-item"><div class="wish-status" style="color:rgba(232,228,218,0.35);">✦ APPROACHING</div><div class="wish-title">Global Ambassador</div><div class="wish-note">Prada front row. Givenchy campaign. Max Mara Pre-Fall. The named deal is next.</div><div class="wish-tick" style="background:linear-gradient(to right,#C9A96E,transparent);width:20px;"></div></div>
+    <!-- Chemistry stats -->
+    <div class="chem-stats">
+      <div class="chem-stat">
+        <div class="chem-stat-val" style="color:#C9A96E;">EP.1</div>
+        <div class="chem-stat-lbl">#1 WORLDWIDE</div>
       </div>
-      <div class="wish-col-center">
-        <div style="font-size:8px;letter-spacing:0.38em;color:rgba(232,228,218,0.45);margin-bottom:28px;">✦ TOGETHER</div>
-        <div style="margin-bottom:28px;"><div class="cormorant" style="font-size:15px;color:#E8E4DA;line-height:1.4;margin-bottom:7px;">NamtanFilm in the West</div><div style="font-size:10px;font-style:italic;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(232,228,218,0.38);line-height:1.6;">A fan meeting where the timezone is different but the love is the same.</div><div style="width:1px;height:20px;background:rgba(232,228,218,0.14);margin:18px auto;"></div></div>
-        <div style="margin-bottom:28px;"><div class="cormorant" style="font-size:15px;color:#E8E4DA;line-height:1.4;margin-bottom:7px;">10 Million Lunars</div><div style="font-size:10px;font-style:italic;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(232,228,218,0.38);line-height:1.6;">The constellation keeps growing. Every follow counts.</div><div style="width:1px;height:20px;background:rgba(232,228,218,0.14);margin:18px auto;"></div></div>
-        <div><div class="cormorant" style="font-size:15px;color:#E8E4DA;line-height:1.4;margin-bottom:7px;">"Her" — Their Next Universe</div><div style="font-size:10px;font-style:italic;font-family:'Cormorant Garamond',Georgia,serif;color:rgba(232,228,218,0.38);line-height:1.6;">The thriller arrives. Same chemistry. Deeper stakes.</div></div>
+      <div class="chem-stat">
+        <div class="chem-stat-val" style="color:#E8E4DA;">19</div>
+        <div class="chem-stat-lbl">TERRITORIES TRENDED</div>
       </div>
-      <div class="wish-col" style="border-left:1px dashed rgba(232,228,218,0.1);text-align:right;">
-        <div style="font-size:8px;letter-spacing:0.38em;color:#7FBFB8;margin-bottom:28px;">🌟 FILM</div>
-        <div class="wish-item"><div class="wish-status" style="color:#7FBFB8;text-align:right;">✓ SEOUL AWARD ●</div><div class="wish-title">Outstanding Asian Star</div><div class="wish-note">Seoul International Drama Awards 2025. The world is watching.</div><div class="wish-tick-r" style="background:linear-gradient(to left,#7FBFB8,transparent);width:20px;"></div></div>
-        <div class="wish-item"><div class="wish-status" style="color:rgba(232,228,218,0.35);text-align:right;">IN ORBIT ✦</div><div class="wish-title">Activities in the West</div><div class="wish-note">The US is the next stage. Her artistry travels without language barriers.</div><div class="wish-tick-r" style="background:linear-gradient(to left,#7FBFB8,transparent);width:20px;"></div></div>
-        <div class="wish-item"><div class="wish-status" style="color:rgba(232,228,218,0.35);text-align:right;">JOURNEY ✦</div><div class="wish-title">A Home for Mom</div><div class="wish-note">Every stream, every trend, every vote brings this closer. Lunars know.</div><div class="wish-tick-r" style="background:linear-gradient(to left,#7FBFB8,transparent);width:20px;"></div></div>
+      <div class="chem-stat">
+        <div class="chem-stat-val" style="color:#7FBFB8;">4.3M+</div>
+        <div class="chem-stat-lbl">TRAILER VIEWS</div>
+      </div>
+      <div class="chem-stat">
+        <div class="chem-stat-val" style="color:#E8E4DA;">Lunars</div>
+        <div class="chem-stat-lbl">OFFICIAL FANDOM</div>
       </div>
     </div>
-  </div>
-</div>
 
+    <div class="chem-divider" id="chem-div"></div>
+
+    <!-- Fan quotes -->
+    <div class="fan-quotes">
+      <div class="fan-quote-card">
+        <div class="fan-quote-text">"these nongs with their phi sleeping and there goes NamtanFilm — already destroyed my schedule"</div>
+        <div class="fan-quote-src">@theashesofstars · 46.1K likes</div>
+      </div>
+      <div class="fan-quote-card">
+        <div class="fan-quote-text">"Prim: classy lesbian. Bambi: hey mamas lesbian. The discourse has erupted and I'm fine with it."</div>
+        <div class="fan-quote-src">@queerframes · viral Oct 2025</div>
+      </div>
+      <div class="fan-quote-card">
+        <div class="fan-quote-text">"Film refused to hold Nanon's hand but held her Phi's immediately. We see you."</div>
+        <div class="fan-quote-src">TikTok · 153K likes</div>
+      </div>
+      <div class="fan-quote-card">
+        <div class="fan-quote-text">"they look like a married couple already and it's only episode two. I'm devastated."</div>
+        <div class="fan-quote-src">@namtanfilmlunars · 92K likes</div>
+      </div>
+    </div>
+
+    <div class="gr-label-divider">
+      <div class="gr-label-line"></div>
+      <div class="gr-label-text">✦ GIRL RULES 2026 ✦</div>
+      <div class="gr-label-line"></div>
+    </div>
+  </div>
+</section>
 
 <!-- ══ MEDIA GALLERY ══ -->
-<div class="section fade-up" id="gallery" style="background:#08080F;padding:80px 48px;">
-  <div style="text-align:center;margin-bottom:40px;">
-    <div class="section-eyebrow">✦ MEDIA GALLERY</div>
-    <div class="cormorant" style="font-size:clamp(28px,4vw,44px);color:#E8E4DA;line-height:1;">Namtan × Film</div>
-    <div style="width:60px;height:1px;background:linear-gradient(to right,transparent,rgba(232,228,218,0.3),transparent);margin:16px auto 0;"></div>
+<section id="media" class="section fade-up">
+  <div style="text-align:center;margin-bottom:12px;">
+    <div class="sec-eyebrow">✦ MEDIA GALLERY</div>
+    <div class="sec-title" style="font-size:clamp(28px,4.5vw,52px);">Namtan × Film</div>
+    <div style="width:50px;height:1px;background:linear-gradient(to right,transparent,rgba(232,228,218,0.3),transparent);margin:14px auto 0;"></div>
   </div>
-  <div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:44px;" id="gallery-tabs">
-    <button class="f-btn active" onclick="filterGallery('all',this)">ALL</button>
-    <button class="f-btn" onclick="filterGallery('namtan',this)">🌙 NAMTAN</button>
-    <button class="f-btn" onclick="filterGallery('film',this)">🌟 FILM</button>
-    <button class="f-btn" onclick="filterGallery('both',this)">✦ COLLAB</button>
+  <div class="gallery-tabs" id="gallery-tabs">
+    <button class="g-tab active" onclick="filterGallery('all',this)">ALL</button>
+    <button class="g-tab" onclick="filterGallery('namtan',this)">🌙 NAMTAN</button>
+    <button class="g-tab" onclick="filterGallery('film',this)">🌟 FILM</button>
+    <button class="g-tab" onclick="filterGallery('both',this)">✦ TOGETHER</button>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px;max-width:1200px;margin:0 auto;" id="gallery-grid"></div>
-
-  <!-- How to add more -->
-  <div style="max-width:1200px;margin:44px auto 0;border:1px solid rgba(232,228,218,0.07);padding:20px 24px;background:rgba(232,228,218,0.02);">
-    <div style="font-size:8px;letter-spacing:0.35em;color:rgba(232,228,218,0.3);margin-bottom:10px;">✦ 如何添加更多素材</div>
-    <div style="font-size:10px;color:rgba(232,228,218,0.4);line-height:1.9;font-family:Georgia,serif;">
-      找到代码里的 <span style="color:#C9A96E;">GALLERY_ITEMS</span> 数组，按格式添加条目。
-      Instagram 帖子 → <span style="color:#7FBFB8;">type:"instagram", postUrl:"https://www.instagram.com/p/帖子ID/"</span>
-      ｜ YouTube 视频 → <span style="color:#7FBFB8;">type:"youtube", videoId:"视频ID"</span>
+  <div id="gallery-grid">
+    <div class="g-loading">✦ LOADING LATEST VIDEOS</div>
+  </div>
+  <div style="max-width:1200px;margin:32px auto 0;border:1px dashed rgba(232,228,218,0.08);padding:18px 24px;">
+    <div style="font-size:8px;letter-spacing:0.32em;color:rgba(232,228,218,0.28);margin-bottom:8px;">✦ HOW TO ADD MORE</div>
+    <div style="font-size:10px;color:rgba(232,228,218,0.38);line-height:1.85;font-family:'Cormorant Garamond',Georgia,serif;">
+      Edit <span style="color:#C9A96E;">CONFIG.instagram</span> at the top of the script to add Instagram posts. YouTube videos are auto-fetched from GMMTV's channel. Add pinned video IDs to <span style="color:#C9A96E;">CONFIG.youtube.pinned</span>.
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══ DIVIDER ══ -->
-<div class="divider" style="padding:0 48px;margin:0;">
-  <div class="divider-line" style="background:linear-gradient(to right,transparent,rgba(232,228,218,0.1));"></div>
-  <div class="divider-label">✦ universe feed</div>
-  <div class="divider-line" style="background:linear-gradient(to left,transparent,rgba(232,228,218,0.1));"></div>
-</div>
+<!-- ══ LIVE FEED ══ -->
+<div class="divider-row" style="padding:40px 60px;"><div class="div-line" style="background:linear-gradient(to right,transparent,rgba(232,228,218,0.08));"></div><div class="div-label">✦ live feed</div><div class="div-line" style="background:linear-gradient(to left,transparent,rgba(232,228,218,0.08));"></div></div>
 
-<!-- ══ FEED ══ -->
-<div class="feed-section section fade-up" id="feed">
-  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;">
-    <div><div class="section-eyebrow">The Universe Feed</div><div class="cormorant" style="font-size:34px;color:#E8E4DA;">Everything, Now</div></div>
-    <div class="feed-filters" id="f-filters">
-      <button class="f-btn active" onclick="filterFeed('all',this)">All</button>
-      <button class="f-btn" onclick="filterFeed('news',this)">📰 News</button>
-      <button class="f-btn" onclick="filterFeed('brand',this)">✦ Brand</button>
-      <button class="f-btn" onclick="filterFeed('work',this)">🎬 Work</button>
-      <button class="f-btn" onclick="filterFeed('event',this)">📅 Events</button>
-      <button class="f-btn" onclick="filterFeed('fan',this)">🌙 Fan</button>
-      <button class="f-btn" onclick="filterFeed('social',this)">📸 Social</button>
+<section id="feed" class="section fade-up">
+  <div class="feed-header">
+    <div>
+      <div class="sec-eyebrow">THE UNIVERSE FEED</div>
+      <div class="sec-title" style="font-size:clamp(26px,3.5vw,40px);">Everything, Now</div>
+    </div>
+    <div class="feed-filters">
+      <button class="f-btn active" onclick="filterFeed('all',this)">ALL</button>
+      <button class="f-btn" onclick="filterFeed('news',this)">📰 NEWS</button>
+      <button class="f-btn" onclick="filterFeed('work',this)">🎬 WORK</button>
+      <button class="f-btn" onclick="filterFeed('brand',this)">✦ BRAND</button>
+      <button class="f-btn" onclick="filterFeed('event',this)">📅 EVENTS</button>
+      <button class="f-btn" onclick="filterFeed('fan',this)">🌙 FAN</button>
     </div>
   </div>
-  <div class="feed-grid" id="f-grid"></div>
-  <div style="text-align:center;margin-top:32px;"><button class="f-btn" style="padding:9px 28px;" onclick="loadMore()">Load More ↓</button></div>
-</div>
-
-<!-- ══ DIVIDER ══ -->
-<div class="divider" style="padding:0 48px;">
-  <div class="divider-line" style="background:linear-gradient(to right,transparent,rgba(127,191,184,0.12));"></div>
-  <div class="divider-label" style="color:rgba(127,191,184,0.5);">✦ lunar lab</div>
-  <div class="divider-line" style="background:linear-gradient(to left,transparent,rgba(127,191,184,0.12));"></div>
-</div>
-
-<!-- ══ LUNAR LAB ══ -->
-<div class="lunar-lab section fade-up" id="lab">
-  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:6px;">
-    <div><div class="section-eyebrow" style="color:rgba(127,191,184,0.6);">Lunar Lab</div><div class="cormorant" style="font-size:34px;color:#E8E4DA;line-height:1.1;">Made by Lunars,<br>for Lunars</div></div>
-    <button class="submit-btn">Submit Your Creation ↗</button>
+  <div id="feed-timeline"></div>
+  <div style="text-align:center;margin-top:36px;">
+    <button class="f-btn" style="padding:9px 28px;" onclick="feedLoadMore()">LOAD MORE ↓</button>
   </div>
-  <p style="font-size:12px;font-style:italic;color:rgba(232,228,218,0.35);max-width:480px;line-height:1.7;font-family:'Cormorant Garamond',Georgia,serif;margin-bottom:0;">The fandom's living room. Memes, art, edits — the creative chaos that makes the Lunars universe spin.</p>
-  <div class="meme-grid" id="meme-grid"></div>
-  <div style="border-top:1px solid rgba(127,191,184,0.1);padding-top:28px;margin-top:8px;">
-    <div class="section-eyebrow" style="color:rgba(127,191,184,0.5);">✦ Hall of Fame</div>
-    <div class="hof-strip" id="hof-strip"></div>
-  </div>
-</div>
+</section>
 
-<!-- ══ CONNECT ══ -->
-<div class="connect section fade-up" id="connect">
-  <div style="max-width:1100px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:48px;">
-      <div class="section-eyebrow">✦ connect · stream · support</div>
-      <div class="cormorant" style="font-size:clamp(28px,4vw,46px);color:#E8E4DA;">Every action moves<br>the constellation forward</div>
+<!-- ══ FOOTER ══ -->
+<footer id="footer">
+  <div class="footer-wm">#NamtanFilm</div>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-col-title">NAMTAN</div>
+      <a class="footer-link" href="https://instagram.com/namtan.tipnaree" target="_blank" rel="noopener">@namtan.tipnaree · Instagram</a>
+      <a class="footer-link" href="https://x.com/NamtanTipnaree" target="_blank" rel="noopener">@NamtanTipnaree · X</a>
+      <a class="footer-link" href="https://www.tiktok.com/@namtan.tipnaree" target="_blank" rel="noopener">@namtan.tipnaree · TikTok</a>
     </div>
-    <div class="connect-grid">
-      <div>
-        <div class="mission-box">
-          <div style="display:flex;align-items:center;gap:9px;margin-bottom:18px;"><span class="mission-pulse"></span><span style="font-size:8px;letter-spacing:0.35em;color:rgba(201,169,110,0.65);">ACTIVE MISSION</span></div>
-          <div class="cormorant" style="font-size:22px;color:#E8E4DA;margin-bottom:9px;line-height:1.3;">Push Girl Rules EP.2 past 500K views on GMMTV YouTube</div>
-          <p style="font-size:11px;font-style:italic;color:rgba(232,228,218,0.4);margin-bottom:18px;font-family:'Cormorant Garamond',Georgia,serif;">EP.1 trended #1 worldwide in 19 territories. EP.2 needs us.</p>
-          <div style="display:flex;justify-content:space-between;margin-bottom:7px;"><span style="font-size:8px;letter-spacing:0.22em;color:rgba(201,169,110,0.55);">PROGRESS</span><span style="font-size:8px;letter-spacing:0.18em;color:#C9A96E;">342K / 500K</span></div>
-          <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%;background:linear-gradient(to right,#C9A96E,#E8D5A8);"></div></div>
-          <div style="margin:16px 0 18px;">
-            <div class="mission-step">① Stream on GMMTV YouTube ↗</div>
-            <div class="mission-step">② Trend <span style="color:#C9A96E;">#GirlRulesSeriesEP2</span> on X</div>
-            <div class="mission-step">③ Share to 3 friends outside the fandom</div>
-            <div class="mission-step">④ Leave a review comment on iQIYI</div>
-          </div>
-          <div style="display:flex;gap:10px;">
-            <a href="https://www.youtube.com/@GMMTV" style="font-size:8px;letter-spacing:0.28em;color:#C9A96E;border:1px solid rgba(201,169,110,0.38);padding:8px 16px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='rgba(201,169,110,0.09)'" onmouseout="this.style.background='transparent'">STREAM ↗</a>
-            <a href="https://x.com/search?q=%23GirlRulesSeries" style="font-size:8px;letter-spacing:0.28em;color:rgba(232,228,218,0.45);border:1px solid rgba(232,228,218,0.12);padding:8px 16px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.borderColor='rgba(232,228,218,0.35)';this.style.color='#E8E4DA'" onmouseout="this.style.borderColor='rgba(232,228,218,0.12)';this.style.color='rgba(232,228,218,0.45)'">TREND ↗</a>
-          </div>
-        </div>
-        <div style="font-size:8px;letter-spacing:0.25em;color:rgba(232,228,218,0.22);margin-bottom:10px;">MISSIONS COMPLETED</div>
-        <div style="font-size:10px;color:rgba(232,228,218,0.35);display:flex;gap:8px;align-items:center;margin-bottom:7px;"><span style="color:#C9A96E;">✓</span>Trailer hit 4.3M+ views across GMMTV channels</div>
-        <div style="font-size:10px;color:rgba(232,228,218,0.35);display:flex;gap:8px;align-items:center;margin-bottom:7px;"><span style="color:#C9A96E;">✓</span>EP.1 trended #1 worldwide on X — 19 territories</div>
-        <div style="font-size:10px;color:rgba(232,228,218,0.35);display:flex;gap:8px;align-items:center;"><span style="color:#C9A96E;">✓</span>#GirlRulesSeries trended #1 in Vietnam, Singapore + 12 more</div>
-      </div>
-      <div>
-        <div style="font-size:8px;letter-spacing:0.3em;color:rgba(232,228,218,0.3);margin-bottom:18px;">FOLLOW · SUPPORT · BOOST</div>
-        <a class="platform-row" href="https://instagram.com/namtan.tipnaree">
-          <div><div style="font-size:7px;letter-spacing:0.25em;color:rgba(201,169,110,0.5);margin-bottom:4px;">INSTAGRAM</div><div class="cormorant" style="font-size:15px;color:#E8E4DA;">@namtan.tipnaree</div></div>
-          <div style="text-align:right;"><div class="cormorant" style="font-size:22px;color:#C9A96E;">3M</div><div style="font-size:7px;color:rgba(201,169,110,0.45);letter-spacing:0.18em;">FOLLOWERS</div></div>
-        </a>
-        <a class="platform-row" href="https://instagram.com/fr.racha">
-          <div><div style="font-size:7px;letter-spacing:0.25em;color:rgba(127,191,184,0.5);margin-bottom:4px;">INSTAGRAM</div><div class="cormorant" style="font-size:15px;color:#E8E4DA;">@fr.racha</div></div>
-          <div style="text-align:right;"><div class="cormorant" style="font-size:22px;color:#7FBFB8;">1.4M</div><div style="font-size:7px;color:rgba(127,191,184,0.45);letter-spacing:0.18em;">18% ENG. RATE</div></div>
-        </a>
-        <a class="platform-row" href="https://x.com/NamtanTipnaree">
-          <div><div style="font-size:7px;letter-spacing:0.25em;color:rgba(201,169,110,0.5);margin-bottom:4px;">X · TWITTER</div><div class="cormorant" style="font-size:15px;color:#E8E4DA;">@NamtanTipnaree</div></div>
-          <div style="text-align:right;"><div class="cormorant" style="font-size:22px;color:#C9A96E;">496K</div></div>
-        </a>
-        <a class="platform-row" href="https://x.com/filmracha">
-          <div><div style="font-size:7px;letter-spacing:0.25em;color:rgba(127,191,184,0.5);margin-bottom:4px;">X · TWITTER</div><div class="cormorant" style="font-size:15px;color:#E8E4DA;">@filmracha</div></div>
-          <div style="text-align:right;"><div class="cormorant" style="font-size:22px;color:#7FBFB8;">Active</div><div style="font-size:7px;color:rgba(127,191,184,0.45);letter-spacing:0.18em;">TRENDING</div></div>
-        </a>
-        <a class="platform-row" href="https://www.iq.com/album/girl-rules-2026-bq3bb5fj2h">
-          <div><div style="font-size:7px;letter-spacing:0.25em;color:rgba(232,228,218,0.35);margin-bottom:4px;">STREAMING</div><div class="cormorant" style="font-size:15px;color:#E8E4DA;">iQIYI · Girl Rules</div></div>
-          <div style="text-align:right;"><div class="cormorant" style="font-size:15px;color:#E8E4DA;">Watch ↗</div></div>
-        </a>
-        <div style="border:1px dashed rgba(232,228,218,0.12);padding:16px;margin-top:6px;text-align:center;">
-          <div style="font-size:8px;letter-spacing:0.3em;color:rgba(232,228,218,0.28);margin-bottom:7px;">FOR BRANDS & PRESS</div>
-          <div style="font-size:11px;font-style:italic;color:rgba(232,228,218,0.38);font-family:'Cormorant Garamond',Georgia,serif;margin-bottom:12px;">4.4M+ combined · 18% engagement · Prada · Polo Ralph Lauren</div>
-          <button class="f-btn" style="padding:7px 18px;">Request Media Kit ↗</button>
-        </div>
-      </div>
+    <div>
+      <div class="footer-col-title">FILM</div>
+      <a class="footer-link" href="https://instagram.com/fr.racha" target="_blank" rel="noopener">@fr.racha · Instagram</a>
+      <a class="footer-link" href="https://x.com/filmracha" target="_blank" rel="noopener">@filmracha · X</a>
+    </div>
+    <div>
+      <div class="footer-col-title">STREAM</div>
+      <a class="footer-link" href="https://www.youtube.com/@GMMTV" target="_blank" rel="noopener">GMMTV Official · YouTube</a>
+      <a class="footer-link" href="https://www.iq.com/album/girl-rules-2026-bq3bb5fj2h" target="_blank" rel="noopener">Girl Rules · iQIYI</a>
+      <a class="footer-link" href="https://x.com/search?q=%23GirlRulesSeries" target="_blank" rel="noopener">#GirlRulesSeries · X</a>
     </div>
   </div>
+  <div class="footer-disclaimer">
+    This is a non-commercial fan site created by Lunars — the NamtanFilm fandom. All photos and video thumbnails are &copy; GMMTV Official and respective rights holders. This site is not affiliated with, endorsed by, or connected to GMMTV, Namtan Tipnaree, Film Rachanun, or any of their management.
+  </div>
+  <div class="footer-bottom">
+    <div>&copy; GMMTV Official · Fan Site · Non-commercial · 2026</div>
+    <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;font-style:italic;color:rgba(232,228,218,0.25);">✦ NamtanFilm</div>
+  </div>
+</footer>
+
+<!-- ══ MOBILE BOTTOM NAV ══ -->
+<div id="mobile-nav">
+  <div class="mnav-items">
+    <button class="mnav-item" onclick="window.scrollTo({top:0,behavior:'smooth'})"><span class="mnav-icon">✦</span><span class="mnav-label">HOME</span></button>
+    <button class="mnav-item" onclick="scrollTo('#namtan')"><span class="mnav-icon">🌙</span><span class="mnav-label">NAMTAN</span></button>
+    <button class="mnav-item" onclick="scrollTo('#film')"><span class="mnav-icon">🌟</span><span class="mnav-label">FILM</span></button>
+    <button class="mnav-item" onclick="scrollTo('#together')"><span class="mnav-icon">✦</span><span class="mnav-label">TOGETHER</span></button>
+    <button class="mnav-item" onclick="scrollTo('#media')"><span class="mnav-icon">◈</span><span class="mnav-label">MEDIA</span></button>
+  </div>
 </div>
 
-<!-- FOOTER -->
-<div class="footer">
-  <div class="cormorant" style="font-size:18px;color:rgba(232,228,218,0.28);font-style:italic;">✦ NamtanFilm</div>
-  <div class="footer-mid" style="font-size:8px;letter-spacing:0.3em;color:rgba(232,228,218,0.18);">TWO STARS · ONE SKY · INFINITE CHEMISTRY</div>
-  <div class="footer-right" style="font-size:8px;letter-spacing:0.22em;color:rgba(232,228,218,0.18);">© 2026 LUNARS</div>
+<!-- ══ LIVE TICKER ══ -->
+<div id="live-ticker">
+  <div class="ticker-inner" id="ticker-inner"></div>
 </div>
 
-<!-- LIVE TICKER -->
-<div class="live-ticker desktop-only">
-  <div class="ticker-text"><span class="live-dot" style="background:#C9A96E;box-shadow:0 0 6px #C9A96E;"></span>NOW AIRING · GIRL RULES EP.2 · EVERY MONDAY · GMM25 · 20:30 ICT<span class="live-dot" style="background:#7FBFB8;box-shadow:0 0 6px #7FBFB8;animation-delay:0.6s;"></span></div>
+<!-- ══ YOUTUBE MODAL ══ -->
+<div id="yt-modal" onclick="closeYTModal(event)">
+  <div class="yt-modal-inner">
+    <button class="yt-modal-close" onclick="closeYTModal(true)">CLOSE ✕</button>
+    <iframe id="yt-modal-iframe" src="" allow="autoplay;fullscreen" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>
+  </div>
 </div>
-
-</div><!-- /app -->
 
 <script>
+// ════════════════════════════════════════════
+//  AUTO-FETCH CONFIG — edit these to update
+// ════════════════════════════════════════════
+var CONFIG = {
+  youtube: {
+    // GMMTV Official channel ID
+    channelId: 'UCcgm3o_-_DXchf0mzqNMK4Q',
+    // How many RSS videos to show
+    maxVideos: 6,
+    // Pinned video IDs always shown first
+    pinned: ['YWkIBHRFDHc', 'XoZ7P9kEWKU'],
+  },
+  instagram: [
+    { url: 'https://www.instagram.com/p/DC76sN8zq4c/', person: 'namtan', label: 'Girl Rules Promo' },
+    { url: 'https://www.instagram.com/reel/DQ7gxznAUWX/', person: 'both', label: 'Official Reel' },
+    // add more Instagram post URLs here
+  ],
+};
 
-// ══════════════════════════════════════════════════════════
-//  MEDIA GALLERY — 在这里添加你的素材
-//  type: "youtube"   → 填 videoId
-//  type: "instagram" → 填 postUrl (完整链接)
-//  type: "tweet"     → 填 tweetId
-//  person: "namtan" | "film" | "both"
-// ══════════════════════════════════════════════════════════
-var GALLERY_ITEMS = [
-  {type:'youtube', videoId:'YWkIBHRFDHc', person:'both',   label:'Girl Rules 官方预告', caption:'© GMMTV Official'},
-  {type:'youtube', videoId:'XoZ7P9kEWKU', person:'both',   label:'Girl Rules EP.1',    caption:'© GMMTV Official'},
-  {type:'instagram', postUrl:'https://www.instagram.com/p/DC76sN8zq4c/', person:'namtan', label:'Girl Rules 宣传帖', caption:'@namtan.tipnaree'},
-  {type:'instagram', postUrl:'https://www.instagram.com/reel/DQ7gxznAUWX/', person:'both', label:'Girl Rules 官方Reel', caption:'@gmmtv'},
-  {type:'tweet', tweetId:'2031073805238722999', person:'namtan', label:'Namtan on X', caption:'@NamtanTipnaree'},
-  {type:'tweet', tweetId:'2032101429209596146', person:'film',   label:'Film on X',   caption:'@filmracha'},
+// ── STATIC FEED DATA ─────────────────────────────────────────────────
+// Edit this array to update the Live Feed / News section.
+var FEED_DATA = [
+  {type:'work',  tc:'#C9A96E',           tag:'🎬 NEW WORK',  hot:true,
+   title:'Girl Rules EP.2 — "Can we just be friends?"',
+   date:'Mar 16, 2026', desc:'Bambi returns to Prim\'s life as a client. Old feelings collide with professional distance in the most exquisite tension of the season.',
+   meta:'GMMTV · GMM25 · iQIYI'},
+  {type:'news',  tc:'rgba(232,228,218,0.55)', tag:'📰 NEWS', hot:true,
+   title:'EP.1 trends #1 Worldwide — 19 territories',
+   date:'Mar 10, 2026', desc:'#GirlRulesSeriesEP1 topped global trends within hours of airing. Lunars delivered.',
+   meta:'Twitter / X · GMMTV'},
+  {type:'news',  tc:'rgba(232,228,218,0.55)', tag:'📰 NEWS', hot:false,
+   title:'Trailer surpasses 4.3M+ views across GMMTV channels',
+   date:'Feb 24, 2026', desc:'#GirlRulesSeries trended #1 in Vietnam, Singapore and 10+ regions on release day.',
+   meta:'GMMTV Official'},
+  {type:'brand', tc:'#C9A96E',           tag:'✦ BRAND',  hot:false,
+   title:'NamtanFilm at Polo Ralph Lauren — Paris Fashion Week',
+   date:'Oct 2025', desc:'490K+ and 368K+ likes simultaneously. Lunars coordinated in real time across 14 territories.',
+   meta:'Paris Fashion Week'},
+  {type:'brand', tc:'#C9A96E',           tag:'✦ BRAND',  hot:false,
+   title:'Namtan front row at Prada SS26 — Milan',
+   date:'Oct 2025', desc:'Seated front row at Prada\'s SS26 Menswear presentation. The fashion world keeps calling.',
+   meta:'Prada · Milan Fashion Week'},
+  {type:'work',  tc:'#7FBFB8',           tag:'🎬 WORK',   hot:false,
+   title:'Film wins Seoul Drama Awards — Outstanding Asian Star',
+   date:'2025', desc:'Her performance in My Precious brought her to Seoul. The award confirmed what the fandom already knew.',
+   meta:'Seoul Int\'l Drama Awards'},
+  {type:'fan',   tc:'#7FBFB8',           tag:'🌙 FAN',    hot:false,
+   title:'Lunars trend #NamtanFilmInParis — 14 territories',
+   date:'Oct 2025', desc:'Fans mobilized within minutes of the PFW appearance. 14 trending territories in under 3 hours.',
+   meta:'Twitter / X'},
+  {type:'event', tc:'rgba(232,228,218,0.55)', tag:'📅 EVENT', hot:false,
+   title:'Girl Rules EP.3 — Mar 23 · 20:30 ICT',
+   date:'Mar 23, 2026', desc:'Prim must decide whether to keep Bambi as a client. The fashion world becomes a battleground for feelings.',
+   meta:'GMM25 · iQIYI'},
+  {type:'brand', tc:'#C9A96E',           tag:'✦ BRAND',  hot:false,
+   title:'Namtan at Athens Fashion Week & Max Mara Pre-Fall',
+   date:'2025', desc:'Continued the luxury circuit. A named global ambassadorship is drawing closer.',
+   meta:'Max Mara · Athens FW'},
+  {type:'news',  tc:'rgba(232,228,218,0.55)', tag:'📰 NEWS', hot:false,
+   title:'#GirlRulesSeries trended #1 in Vietnam, Singapore + 12 more',
+   date:'Feb 2026', desc:'The trailer release became an international event. The Lunars fandom continues to grow.',
+   meta:'Twitter / X'},
 ];
 
+var feedFilter = 'all';
+var feedCount = 6;
+
+// ── GALLERY STATE ─────────────────────────────────────────────────────
 var galleryFilter = 'all';
+var galleryVideos = []; // populated by RSS fetch
 var igScriptLoaded = false;
 
+// ── STARS ─────────────────────────────────────────────────────────────
+function mkStars(id, n) {
+  var c = document.getElementById(id);
+  if (!c) return;
+  var cols = ['#C9A96E','#7FBFB8','#E8E4DA','#E8E4DA','#E8E4DA'];
+  for (var i = 0; i < n; i++) {
+    var s = document.createElement('div');
+    s.className = 'star';
+    var sz = (Math.random() * 1.8 + 0.2).toFixed(1);
+    var op = (Math.random() * 0.45 + 0.08).toFixed(2);
+    s.style.cssText = 'left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;'
+      +'width:'+sz+'px;height:'+sz+'px;'
+      +'background:'+cols[Math.floor(Math.random()*cols.length)]+';'
+      +'--op:'+op+';--dur:'+(Math.random()*4+2).toFixed(1)+'s;'
+      +'--del:'+(Math.random()*6).toFixed(1)+'s;'
+      +'position:absolute;border-radius:50%;';
+    c.appendChild(s);
+  }
+}
+
+// ── NAV ───────────────────────────────────────────────────────────────
+window.addEventListener('scroll', function() {
+  var nav = document.getElementById('main-nav');
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+function scrollTo(id) {
+  var el = document.querySelector(id);
+  if (el) el.scrollIntoView({behavior:'smooth'});
+}
+
+var drawerOpen = false;
+function toggleDrawer() {
+  drawerOpen = !drawerOpen;
+  var d = document.getElementById('mobile-drawer');
+  var h = document.getElementById('hamburger');
+  if (d) d.classList.toggle('open', drawerOpen);
+  if (h) {
+    var spans = h.querySelectorAll('span');
+    if (drawerOpen) {
+      spans[0].style.transform = 'rotate(45deg) translate(4px,4px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(4px,-4px)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  }
+}
+
+// ── HERO ──────────────────────────────────────────────────────────────
+function heroImgLoad(side) {
+  var img = document.getElementById('hi-'+side);
+  var ph  = document.getElementById('hph-'+side);
+  if (img) img.classList.add('loaded');
+  if (ph)  ph.style.opacity = '0';
+}
+
+function heroHover(side) {
+  var sn = document.getElementById('hs-n');
+  var sf = document.getElementById('hs-f');
+  var sp = document.getElementById('h-spine');
+  var ct = document.getElementById('h-center');
+  var ln = document.getElementById('hl-n');
+  var lf = document.getElementById('hl-f');
+  if (side === 'n') {
+    if (sn) sn.style.flex = '1.3';
+    if (sf) sf.style.flex = '0.7';
+    if (sp) sp.style.transform = 'translateX(-105px)';
+    if (ct) ct.style.opacity = '0';
+    if (ln) ln.style.width = '64%';
+    if (lf) lf.style.width = '22px';
+  } else if (side === 'f') {
+    if (sn) sn.style.flex = '0.7';
+    if (sf) sf.style.flex = '1.3';
+    if (sp) sp.style.transform = 'translateX(105px)';
+    if (ct) ct.style.opacity = '0';
+    if (ln) ln.style.width = '22px';
+    if (lf) lf.style.width = '64%';
+  } else {
+    if (sn) sn.style.flex = '1';
+    if (sf) sf.style.flex = '1';
+    if (sp) sp.style.transform = '';
+    if (ct) ct.style.opacity = '1';
+    if (ln) ln.style.width = '28px';
+    if (lf) lf.style.width = '28px';
+  }
+}
+
+// parallax on mouse
+document.addEventListener('mousemove', function(e) {
+  var x = (e.clientX / window.innerWidth - 0.5) * 8;
+  var y = (e.clientY / window.innerHeight - 0.5) * 8;
+  var pn = document.getElementById('hi-n');
+  var pf = document.getElementById('hi-f');
+  if (pn) pn.style.transform = 'translate('+x+'px,'+y+'px) scale(1.04)';
+  if (pf) pf.style.transform = 'translate('+(x*0.6)+'px,'+(y*0.6)+'px) scale(1.04)';
+});
+
+function heroPlay(side, videoId) {
+  var overlay = document.getElementById('hyt-'+side);
+  var iframe  = document.getElementById('hyt-iframe-'+side);
+  if (!overlay || !iframe) return;
+  iframe.src = 'https://www.youtube.com/embed/'+videoId+'?autoplay=1&rel=0';
+  overlay.style.display = 'block';
+  overlay.onclick = function(ev) {
+    if (ev.target === overlay) { iframe.src = ''; overlay.style.display = 'none'; }
+  };
+}
+
+// ── STATS BAR ────────────────────────────────────────────────────────
+var STATS = [
+  {val:'3M',    lbl:'NAMTAN · INSTAGRAM', gold:true},
+  {val:'3.2M',  lbl:'NAMTAN · TIKTOK',   gold:true},
+  {val:'1.4M',  lbl:'FILM · INSTAGRAM',  gold:false},
+  {val:'18%',   lbl:'FILM · ENGAGEMENT', gold:false},
+  {val:'PRADA', lbl:'NAMTAN · BRAND',    gold:true},
+  {val:'GIVENCHY', lbl:'NAMTAN · BRAND', gold:true},
+  {val:'POLO RALPH LAUREN', lbl:'FILM · BRAND', gold:false},
+  {val:'4.3M+', lbl:'TRAILER VIEWS',     gold:true},
+  {val:'#1',    lbl:'WORLDWIDE TREND',   gold:false},
+  {val:'19',    lbl:'TERRITORIES TRENDED', gold:false},
+  {val:'SEOUL', lbl:'DRAMA AWARDS · FILM', gold:false},
+  {val:'LUNARS',lbl:'OFFICIAL FANDOM',   gold:true},
+];
+function buildStats() {
+  var inner = document.getElementById('stats-inner');
+  if (!inner) return;
+  // duplicate for seamless scroll
+  var html = '';
+  for (var r = 0; r < 2; r++) {
+    STATS.forEach(function(s) {
+      html += '<div class="stat-item">'
+        + '<div>'
+        + '<div class="stat-val" style="color:'+(s.gold?'#C9A96E':'#7FBFB8')+';">'+s.val+'</div>'
+        + '<div class="stat-lbl">'+s.lbl+'</div>'
+        + '</div>'
+        + '</div>';
+    });
+  }
+  inner.innerHTML = html;
+}
+
+// ── LIVE TICKER ──────────────────────────────────────────────────────
+var TICKER_ITEMS = [
+  {text:'NOW AIRING · GIRL RULES EP.2 · EVERY MONDAY · GMM25 · 20:30 ICT', cls:'gold'},
+  {text:'EP.1 #1 WORLDWIDE · 19 TERRITORIES', cls:'teal'},
+  {text:'NAMTAN · PRADA · GIVENCHY · GUCCI · MILAN', cls:'gold'},
+  {text:'FILM · POLO RALPH LAUREN · PARIS FASHION WEEK', cls:'teal'},
+  {text:'TRAILER 4.3M+ VIEWS · #GIRLRULESSERIES', cls:''},
+  {text:'SEOUL DRAMA AWARDS · OUTSTANDING ASIAN STAR · FILM RACHANUN', cls:'teal'},
+  {text:'NAMTAN 3M INSTAGRAM · TIKTOK 3.2M', cls:'gold'},
+  {text:'STREAM GIRL RULES ON iQIYI · GMMTV YOUTUBE', cls:''},
+];
+function buildTicker() {
+  var inner = document.getElementById('ticker-inner');
+  if (!inner) return;
+  var html = '';
+  for (var r = 0; r < 2; r++) {
+    TICKER_ITEMS.forEach(function(item) {
+      html += '<div class="ticker-item '+item.cls+'">'
+        + '<span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:currentColor;margin-right:12px;vertical-align:middle;opacity:0.6;"></span>'
+        + item.text
+        + '</div>';
+    });
+  }
+  inner.innerHTML = html;
+}
+
+// ── YOUTUBE RSS AUTO-FETCH ────────────────────────────────────────────
+function fetchYouTubeRSS() {
+  var rssUrl = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + CONFIG.youtube.channelId;
+  var proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(rssUrl);
+  fetch(proxyUrl)
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var parser = new DOMParser();
+      var xml = parser.parseFromString(data.contents, 'text/xml');
+      var entries = xml.querySelectorAll('entry');
+      var videos = [];
+      var seen = {};
+      // pinned first
+      CONFIG.youtube.pinned.forEach(function(vid) {
+        if (!seen[vid]) {
+          seen[vid] = true;
+          videos.push({
+            videoId: vid,
+            title: vid === 'YWkIBHRFDHc' ? 'Girl Rules — Official Trailer' : 'Girl Rules EP.1',
+            published: '2026',
+            person: 'both',
+            caption: '© GMMTV Official',
+          });
+        }
+      });
+      var count = 0;
+      entries.forEach(function(entry) {
+        if (count >= CONFIG.youtube.maxVideos) return;
+        var link = entry.querySelector('link');
+        var videoId = '';
+        if (link) {
+          var href = link.getAttribute('href') || '';
+          var m = href.match(/[?&]v=([^&]+)/);
+          if (m) videoId = m[1];
+        }
+        var vidEl = entry.querySelector('videoId');
+        if (vidEl) videoId = vidEl.textContent.trim();
+        if (!videoId || seen[videoId]) return;
+        seen[videoId] = true;
+        var titleEl = entry.querySelector('title');
+        var pubEl   = entry.querySelector('published');
+        videos.push({
+          videoId: videoId,
+          title: titleEl ? titleEl.textContent : 'GMMTV Video',
+          published: pubEl ? pubEl.textContent.substring(0,10) : '',
+          person: 'both',
+          caption: '© GMMTV Official',
+        });
+        count++;
+      });
+      galleryVideos = videos;
+      renderGallery();
+    })
+    .catch(function() {
+      renderFallbackGallery();
+    });
+}
+
+function renderFallbackGallery() {
+  galleryVideos = CONFIG.youtube.pinned.map(function(vid, i) {
+    return {
+      videoId: vid,
+      title: i === 0 ? 'Girl Rules — Official Trailer' : 'Girl Rules EP.1',
+      published: '2026',
+      person: 'both',
+      caption: '© GMMTV Official',
+    };
+  });
+  renderGallery();
+}
+
+// ── GALLERY RENDER ───────────────────────────────────────────────────
 function filterGallery(f, btn) {
   galleryFilter = f;
-  document.querySelectorAll('#gallery-tabs .f-btn').forEach(function(b){b.classList.remove('active');});
+  document.querySelectorAll('#gallery-tabs .g-tab').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
   renderGallery();
 }
@@ -641,55 +1095,86 @@ function filterGallery(f, btn) {
 function renderGallery() {
   var grid = document.getElementById('gallery-grid');
   if (!grid) return;
-  var items = galleryFilter === 'all'
-    ? GALLERY_ITEMS
-    : GALLERY_ITEMS.filter(function(i){ return i.person === galleryFilter || (galleryFilter === 'both' && i.person === 'both'); });
 
-  grid.innerHTML = items.map(function(item, idx) {
+  // Combine YouTube + Instagram
+  var allItems = [];
+
+  // YouTube
+  galleryVideos.forEach(function(v) {
+    allItems.push({
+      type: 'youtube',
+      videoId: v.videoId,
+      title: v.title,
+      published: v.published,
+      person: v.person || 'both',
+      caption: v.caption || '© GMMTV Official',
+      label: v.title,
+    });
+  });
+
+  // Instagram
+  CONFIG.instagram.forEach(function(ig) {
+    allItems.push({
+      type: 'instagram',
+      postUrl: ig.url,
+      person: ig.person || 'both',
+      label: ig.label || 'Instagram Post',
+      caption: ig.person === 'namtan' ? '@namtan.tipnaree' : ig.person === 'film' ? '@fr.racha' : '@gmmtv',
+    });
+  });
+
+  // Filter
+  var items = galleryFilter === 'all'
+    ? allItems
+    : allItems.filter(function(i) {
+        if (galleryFilter === 'both') return i.person === 'both';
+        return i.person === galleryFilter || i.person === 'both';
+      });
+
+  if (items.length === 0) {
+    grid.innerHTML = '<div class="g-loading" style="grid-column:1/-1;">No items match this filter.</div>';
+    return;
+  }
+
+  grid.innerHTML = items.map(function(item) {
     var ac = item.person === 'namtan' ? '#C9A96E' : item.person === 'film' ? '#7FBFB8' : '#E8E4DA';
-    var personLabel = item.person === 'namtan' ? '🌙 Namtan' : item.person === 'film' ? '🌟 Film' : '✦ NamtanFilm';
-    var typeLabel = item.type === 'youtube' ? '▶ YOUTUBE' : item.type === 'instagram' ? '◈ INSTAGRAM' : '✦ X';
+    var personLabel = item.person === 'namtan' ? '🌙 NAMTAN' : item.person === 'film' ? '🌟 FILM' : '✦ NAMTANFILM';
     var mediaHtml = '';
 
     if (item.type === 'youtube') {
-      mediaHtml = '<div class="yt-thumb-wrap" data-vid="'+item.videoId+'" onclick="playGalleryYT(this,''+item.videoId+'')" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;cursor:pointer;background:#0D0D1A;">'
-        + '<img src="https://img.youtube.com/vi/'+item.videoId+'/maxresdefault.jpg" alt="'+item.label+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 0.8s;" onload="this.style.opacity=1" onerror="this.src='https://img.youtube.com/vi/'+item.videoId+'/hqdefault.jpg'" style="opacity:0;"/>'
-        + '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(6,6,14,0.3);transition:background 0.3s;">'
-        + '<div style="width:54px;height:54px;border-radius:50%;background:rgba(6,6,14,0.75);border:1.5px solid rgba(232,228,218,0.35);display:flex;align-items:center;justify-content:center;">'
-        + '<svg width="18" height="18" viewBox="0 0 24 24" fill="#E8E4DA" style="margin-left:3px;"><path d="M8 5v14l11-7z"/></svg>'
-        + '</div></div></div>';
-    } else if (item.type === 'instagram') {
-      mediaHtml = '<div class="ig-wrap" data-url="'+item.postUrl+'" style="min-height:200px;">'
-        + '<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="'+item.postUrl+'" data-instgrm-version="14" style="width:100%;margin:0;border:none;background:transparent;"></blockquote>'
+      mediaHtml = '<div class="yt-wrap" onclick="openYTModal(\''+item.videoId+'\')" title="'+escHtml(item.title)+'">'
+        + '<img src="https://img.youtube.com/vi/'+item.videoId+'/maxresdefault.jpg" alt="'+escHtml(item.title)+' © GMMTV" style="opacity:0;transition:opacity 0.8s;" onload="this.style.opacity=1" onerror="this.src=\'https://img.youtube.com/vi/'+item.videoId+'/hqdefault.jpg\'"/>'
+        + '<div class="yt-overlay"><div class="yt-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="#E8E4DA" style="margin-left:2px;"><path d="M8 5v14l11-7z"/></svg></div></div>'
         + '</div>';
-    } else if (item.type === 'tweet') {
-      mediaHtml = '<div style="padding:4px 0;">'
-        + '<blockquote class="twitter-tweet" data-theme="dark" data-dnt="true">'
-        + '<a href="https://x.com/i/web/status/'+item.tweetId+'"></a>'
-        + '</blockquote></div>';
+    } else if (item.type === 'instagram') {
+      mediaHtml = '<div class="ig-wrap">'
+        + '<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="'+item.postUrl+'" data-instgrm-version="14" style="width:100%;margin:0!important;border:none!important;background:transparent!important;"></blockquote>'
+        + '</div>';
     }
 
-    return '<div style="background:rgba(232,228,218,0.02);border:1px solid rgba(232,228,218,0.08);overflow:hidden;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-3px)';this.style.borderColor='rgba(232,228,218,0.18)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(232,228,218,0.08)'">'
-      + '<div style="position:relative;">'
+    return '<div class="g-card">'
+      + '<div class="g-media" style="position:relative;">'
       + mediaHtml
-      + '<div style="position:absolute;top:10px;right:10px;font-size:7px;letter-spacing:0.28em;color:'+ac+'90;border:1px solid '+ac+'30;padding:2px 8px;background:rgba(6,6,14,0.7);font-family:Georgia,serif;z-index:5;pointer-events:none;">'+typeLabel+'</div>'
+      + '<div class="g-type-badge" style="color:'+ac+'90;border-color:'+ac+'25;">'+(item.type==='youtube'?'▶ YT':'◈ IG')+'</div>'
       + '</div>'
-      + '<div style="padding:14px 16px 16px;">'
-      + '<div style="font-size:8px;letter-spacing:0.28em;color:'+ac+';margin-bottom:6px;font-family:Georgia,serif;">'+personLabel+'</div>'
-      + '<div style="font-size:12px;color:#E8E4DA;font-family:'Cormorant Garamond',Georgia,serif;margin-bottom:4px;">'+item.label+'</div>'
-      + '<div style="font-size:9px;color:rgba(232,228,218,0.38);font-family:Georgia,serif;">'+item.caption+'</div>'
+      + '<div class="g-meta">'
+      + '<div class="g-person" style="color:'+ac+';">'+personLabel+'</div>'
+      + '<div class="g-label">'+escHtml(item.label)+'</div>'
+      + '<div class="g-caption">'+escHtml(item.caption)+'</div>'
       + '</div>'
-      + '<div style="height:1px;background:linear-gradient(to right,'+ac+'30,transparent);"></div>'
+      + '<div class="g-footer" style="background:linear-gradient(to right,'+ac+'25,transparent);"></div>'
       + '</div>';
   }).join('');
 
-  // Process Instagram embeds
-  loadInstagramEmbeds();
-  // Process Twitter embeds
-  if (window.twttr && window.twttr.widgets) window.twttr.widgets.load(grid);
+  // Load Instagram embeds
+  loadIGEmbeds();
 }
 
-function loadInstagramEmbeds() {
+function escHtml(s) {
+  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function loadIGEmbeds() {
   if (window.instgrm) {
     window.instgrm.Embeds.process();
   } else if (!igScriptLoaded) {
@@ -702,338 +1187,104 @@ function loadInstagramEmbeds() {
   }
 }
 
-function playGalleryYT(wrap, videoId) {
-  wrap.innerHTML = '<iframe src="https://www.youtube.com/embed/'+videoId+'?autoplay=1&rel=0" style="position:absolute;inset:0;width:100%;height:100%;border:none;" allow="autoplay;fullscreen" allowfullscreen></iframe>';
-  wrap.style.cursor = 'default';
-}
-
-// ── Hero YouTube play ──
-function playHeroYT(side, videoId) {
-  var overlay = document.getElementById('dyt-'+side);
-  var iframe = document.getElementById('dyt-iframe-'+side);
-  if (!overlay || !iframe) return;
+// ── YOUTUBE MODAL ────────────────────────────────────────────────────
+function openYTModal(videoId) {
+  var modal  = document.getElementById('yt-modal');
+  var iframe = document.getElementById('yt-modal-iframe');
+  if (!modal || !iframe) return;
   iframe.src = 'https://www.youtube.com/embed/'+videoId+'?autoplay=1&rel=0';
-  overlay.style.display = 'block';
-  overlay.style.animation = 'fadeUp 0.4s ease forwards';
-  // close on click
-  overlay.onclick = function(e) {
-    if (e.target === overlay) { iframe.src=''; overlay.style.display='none'; }
-  };
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
-
-// ── DATA ──────────────────────────────────────────────────────
-var CARDS=[
-  {id:'n1',who:'Namtan',accent:'#C9A96E',aa:'rgba(201,169,110,',role:'ACTRESS · MODEL · ICON',name:'Namtan',label:'Girl Rules · Prim',quote:'"Present, focused, radiant."',src:'https://img.youtube.com/vi/YWkIBHRFDHc/maxresdefault.jpg'},
-  {id:'f1',who:'Film',accent:'#7FBFB8',aa:'rgba(127,191,184,',role:'ACTRESS · ARTIST · AWARD WINNER',name:'Film',label:'Girl Rules · Bambi',quote:'"Far from herself — that\'s the magic."',src:'https://img.youtube.com/vi/XoZ7P9kEWKU/maxresdefault.jpg'},
-  {id:'n2',who:'Namtan',accent:'#C9A96E',aa:'rgba(201,169,110,',role:'ACTRESS · MODEL · ICON',name:'Namtan',label:'Paris Fashion Week',quote:'"The luxury world keeps calling."',src:'https://img.youtube.com/vi/YWkIBHRFDHc/hqdefault.jpg'},
-  {id:'f2',who:'Film',accent:'#7FBFB8',aa:'rgba(127,191,184,',role:'ACTRESS · ARTIST · AWARD WINNER',name:'Film',label:'Seoul Drama Awards',quote:'"Outstanding Asian Star."',src:'https://img.youtube.com/vi/XoZ7P9kEWKU/hqdefault.jpg'},
-  {id:'nf',who:'#NamtanFilm',accent:'#E8E4DA',aa:'rgba(232,228,218,',role:'TOGETHER · GIRL RULES 2026',name:'NamtanFilm',label:'Together · Official',quote:'"One look. Everything."',src:'https://img.youtube.com/vi/YWkIBHRFDHc/maxresdefault.jpg'},
-];
-var votes={};
-CARDS.forEach(function(c){votes[c.id]={v:Math.floor(Math.random()*60)+8,name:c.name+' — '+c.label,accent:c.accent,src:c.src};});
-
-var FEED=[
-  {type:'social',embed:true,tag:'📸 Namtan · X',tc:'#C9A96E',tweetId:'2031073805238722999',handle:'@NamtanTipnaree',date:'2026'},
-  {type:'social',embed:true,tag:'📸 Film · X',tc:'#7FBFB8',tweetId:'2032101429209596146',handle:'@filmracha',date:'2026'},
-  {type:'work',tag:'🎬 New Work',tc:'#C9A96E',title:'Girl Rules EP.2 — "Can we just be friends?"',date:'Mar 16, 2026',desc:'Bambi returns to Prim\'s life as a client. Old feelings collide with professional distance.',meta:'GMMTV · GMM25 · iQIYI',hot:true},
-  {type:'news',tag:'📰 News',tc:'rgba(232,228,218,0.55)',title:'EP.1 trends #1 Worldwide — 19 territories',date:'Mar 10, 2026',desc:'#GirlRulesSeriesEP1 topped global trends within hours of airing.',meta:'Twitter / X · GMMTV',hot:true},
-  {type:'news',tag:'📰 News',tc:'rgba(232,228,218,0.55)',title:'Trailer surpasses 4.3M+ views',date:'Feb 24, 2026',desc:'#GirlRulesSeries trended #1 in Vietnam, Singapore and 10+ regions.',meta:'GMMTV Official'},
-  {type:'brand',tag:'✦ Brand',tc:'#C9A96E',title:'NamtanFilm at Polo Ralph Lauren PFW',date:'Oct 2025',desc:'490K+ and 368K+ likes simultaneously. Lunars coordinated the push in real time.',meta:'Paris Fashion Week'},
-  {type:'brand',tag:'✦ Brand',tc:'#C9A96E',title:'Namtan front row at Prada SS26 — Milan',date:'Oct 2025',desc:'Seated front row at Prada\'s SS26 Menswear presentation.',meta:'Prada · Milan FW'},
-  {type:'fan',tag:'🌙 Fan',tc:'#7FBFB8',title:'Lunars trend #NamtanFilmInParis — 14 territories',date:'Oct 2025',desc:'Fans mobilized within minutes. 14 trending territories in 3 hours.',meta:'Twitter / X'},
-  {type:'event',tag:'📅 Event',tc:'rgba(232,228,218,0.55)',title:'Girl Rules EP.3 — Mar 23 · 20:30 ICT',date:'Coming Mar 23',desc:'Prim must decide whether to keep Bambi as a client. The fashion world becomes a battleground.',meta:'GMM25 · iQIYI'},
-  {type:'work',tag:'🎬 New Work',tc:'#7FBFB8',title:'Film wins Seoul Drama Awards — Outstanding Asian Star',date:'2025',desc:'Her performance in My Precious brought her to Seoul. The West is watching.',meta:'Seoul Int\'l Drama Awards'},
-  {type:'brand',tag:'✦ Brand',tc:'#C9A96E',title:'Namtan at Athens FW & Max Mara Pre-Fall',date:'2025',desc:'Continued the luxury fashion circuit. A named ambassadorship draws closer.',meta:'Max Mara · Athens FW'},
-];
-var MEMES=[
-  {e:'😭',t:'"these nongs with their phi sleeping and there goes NamtanFilm"',s:'@theashesofstars · 46.1K likes',tag:'Pluto Series',teal:true},
-  {e:'🤣',t:'"Namtan vs Film with elephants — you have to see this"',s:'@singfilmm · 86.5K likes',tag:'IRL Chaos',teal:false},
-  {e:'🫢',t:'"Prim: classy lesbian / Bambi: hey mamas lesbian" — the discourse has erupted',s:'@queerframes · viral Oct 2025',tag:'Girl Rules',teal:true},
-  {e:'💀',t:'"Film refused to hold Nanon\'s hand but held her Phi\'s immediately"',s:'TikTok · 153K likes',tag:'Real Life',teal:false},
-  {e:'🥹',t:'"they look like a married couple already" — every single episode',s:'@namtanfilmlunars · 92K likes',tag:'Pluto Series',teal:true},
-  {e:'😂',t:'"WHAT THE HECK NAMTANFILM??? TOO COMFY HUH?!?"',s:'TikTok · 153K likes',tag:'BTS',teal:false},
-];
-var HOF=[
-  {r:1,t:'"Two Stars" fanvid',c:'@lunarsedit',v:'2.1M views'},
-  {r:2,t:'Paris BTS compilation',c:'@namfilm.archive',v:'890K views'},
-  {r:3,t:'Pluto finale analysis',c:'@oon_may_lunars',v:'440K views'},
-  {r:4,t:'"Moon gifted to sun" fan art',c:'@frracha.art',v:'310K views'},
-];
-
-var curIdx=0, feedFilter='all', feedCount=6;
-
-// ── STARS ──────────────────────────────────────────────────
-function mkStars(id,n){
-  var c=document.getElementById(id);if(!c)return;
-  var cols=['#C9A96E','#7FBFB8','#E8E4DA','#E8E4DA','#E8E4DA'];
-  for(var i=0;i<n;i++){
-    var s=document.createElement('div');s.className='star';
-    var sz=(Math.random()*1.6+0.3).toFixed(1);
-    var op=(Math.random()*0.4+0.1).toFixed(2);
-    s.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;width:'+sz+'px;height:'+sz+'px;background:'+cols[Math.floor(Math.random()*cols.length)]+';--op:'+op+';--dur:'+(Math.random()*3+2).toFixed(1)+'s;--del:'+(Math.random()*5).toFixed(1)+'s;border-radius:50%;position:absolute;';
-    c.appendChild(s);
+function closeYTModal(force) {
+  if (force === true || (force && force.target === document.getElementById('yt-modal'))) {
+    var modal  = document.getElementById('yt-modal');
+    var iframe = document.getElementById('yt-modal-iframe');
+    if (modal) modal.classList.remove('open');
+    if (iframe) iframe.src = '';
+    document.body.style.overflow = '';
   }
 }
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeYTModal(true);
+});
 
-// ── DESKTOP HOVER ──────────────────────────────────────────
-function diLoad(s){
-  var i=document.getElementById('di-'+s),p=document.getElementById('dph-'+s),c=document.getElementById('dc-'+s);
-  if(i){i.style.opacity='1';i.style.transition='opacity 1.5s ease';}
-  if(p)p.style.opacity='0';if(c)c.style.opacity='1';
+// ── FEED ─────────────────────────────────────────────────────────────
+function filterFeed(type, btn) {
+  feedFilter = type;
+  feedCount = 6;
+  document.querySelectorAll('.feed-filters .f-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  renderFeed();
 }
-function dh(side){
-  var sn=document.getElementById('dn'),sf=document.getElementById('df'),sp=document.getElementById('d-spine'),ct=document.getElementById('d-center');
-  var in2=document.getElementById('di-n'),if2=document.getElementById('di-f');
-  function sh(id,v){var e=document.getElementById(id);if(!e)return;e.style.opacity=v;e.style.transform=v==='1'?'translateY(0)':'translateY(8px)';}
-  if(side==='n'){
-    if(sn)sn.style.flex='1.28';if(sf)sf.style.flex='0.72';
-    if(sp)sp.style.transform='translateX(-110px)';if(ct)ct.style.opacity='0';
-    if(in2)in2.style.transform='scale(1.05)';if(if2)if2.style.transform='scale(1.01)';
-    ['db-n','dt-n','dq-n'].forEach(function(x){sh(x,'1');});
-    ['db-f','dt-f','dq-f'].forEach(function(x){sh(x,'0');});
-    var ln=document.getElementById('dl-n');if(ln)ln.style.width='62%';
-    var lf=document.getElementById('dl-f');if(lf)lf.style.width='24px';
-  } else if(side==='f'){
-    if(sn)sn.style.flex='0.72';if(sf)sf.style.flex='1.28';
-    if(sp)sp.style.transform='translateX(110px)';if(ct)ct.style.opacity='0';
-    if(in2)in2.style.transform='scale(1.01)';if(if2)if2.style.transform='scale(1.05)';
-    ['db-f','dt-f','dq-f'].forEach(function(x){sh(x,'1');});
-    ['db-n','dt-n','dq-n'].forEach(function(x){sh(x,'0');});
-    var lf2=document.getElementById('dl-f');if(lf2)lf2.style.width='62%';
-    var ln2=document.getElementById('dl-n');if(ln2)ln2.style.width='24px';
-  } else {
-    if(sn)sn.style.flex='1';if(sf)sf.style.flex='1';
-    if(sp)sp.style.transform='translateX(-0.5px)';if(ct)ct.style.opacity='1';
-    if(in2)in2.style.transform='scale(1.02)';if(if2)if2.style.transform='scale(1.02)';
-    ['db-n','dt-n','dq-n','db-f','dt-f','dq-f'].forEach(function(x){sh(x,'0');});
-    var ln3=document.getElementById('dl-n');if(ln3)ln3.style.width='28px';
-    var lf3=document.getElementById('dl-f');if(lf3)lf3.style.width='28px';
-  }
+function feedLoadMore() {
+  feedCount += 4;
+  renderFeed();
 }
-
-// ── MOBILE CARDS ──────────────────────────────────────────
-function renderDots(){
-  var c=document.getElementById('m-dots');if(!c)return;
-  c.innerHTML='';
-  CARDS.forEach(function(card,i){
-    var d=document.createElement('div');d.className='pdot'+(i===curIdx?' active':'');
-    d.style.width=(i===curIdx?'20':'8')+'px';
-    if(i===curIdx)d.style.background=card.accent;
-    c.appendChild(d);
-  });
-}
-function renderCards(){
-  var stack=document.getElementById('card-stack');if(!stack)return;
-  stack.innerHTML='';
-  for(var i=Math.min(curIdx+2,CARDS.length-1);i>=curIdx;i--){
-    var card=CARDS[i],isTop=(i===curIdx),off=i-curIdx;
-    var el=document.createElement('div');
-    el.className='swipe-card';el.id='mc-'+i;
-    el.style.cssText='transform:scale('+(1-off*0.04)+') translateY('+(off*14)+'px);z-index:'+(10-off)+';transition:'+(isTop?'none':'transform 0.4s ease')+';';
-    var bgCol=card.who==='Namtan'?'linear-gradient(160deg,#1a1408,#0D0D1A)':card.who==='Film'?'linear-gradient(160deg,#070D0E,#0D0D1A)':'linear-gradient(160deg,#0D0D1A,#0A0A16)';
-    el.innerHTML='<div style="position:absolute;inset:0;background:'+bgCol+';"></div>'+
-      '<img class="card-img" src="'+card.src+'" alt="'+card.name+' © GMMTV" style="opacity:0;" onload="this.style.opacity=1" onerror="this.style.display=\'none\'"/>'+
-      '<div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 35%,'+card.aa+'0.13),transparent 65%);mix-blend-mode:screen;pointer-events:none;"></div>'+
-      '<div class="card-grad"></div><div class="card-grad-top"></div>'+
-      (isTop?'<div class="ind ind-skip" id="ind-skip">LIKE</div><div class="ind ind-love" id="ind-love">LOVEEEE ♡♡♡♡</div>':'')+
-      '<div class="card-info">'+
-        '<span class="card-label" style="color:'+card.aa+'0.7);border-color:'+card.aa+'0.3);">'+card.label+'</span>'+
-        '<div class="card-name">'+card.name+'</div>'+
-        '<div class="card-role">'+card.role+'</div>'+
-        '<div class="card-line" style="background:linear-gradient(to right,'+card.accent+',transparent);width:'+(isTop?'55':'28')+'px;"></div>'+
-        (isTop?'<div class="card-quote">'+card.quote+'</div>':'')+
-      '</div>';
-    if(isTop)setupSwipe(el,i);
-    stack.appendChild(el);
-  }
-  if(curIdx>=CARDS.length){
-    stack.innerHTML='<div style="text-align:center;padding:40px 20px;"><div class="cormorant" style="font-size:30px;color:#E8E4DA;margin-bottom:10px;">All cards seen ✦</div><div style="font-size:11px;color:rgba(232,228,218,0.38);font-style:italic;margin-bottom:22px;">Your votes have been counted.</div><button onclick="curIdx=0;renderCards();" style="font-size:8px;letter-spacing:0.28em;color:#C9A96E;border:1px solid rgba(201,169,110,0.38);padding:9px 22px;background:transparent;cursor:pointer;font-family:Georgia,serif;">See Again ↺</button></div>';
-  }
-  renderDots();renderVotes();
-}
-
-function setupSwipe(el,idx){
-  var sx=0,curX=0,drag=false,THR=80;
-  function start(x){sx=x;curX=0;drag=true;el.style.transition='none';var h=document.getElementById('m-hint');if(h)h.style.opacity='0';}
-  function move(x){
-    if(!drag)return;curX=x-sx;
-    el.style.transform='translateX('+curX+'px) rotate('+(curX*0.08)+'deg)';
-    var p=Math.min(Math.abs(curX)/THR,1);
-    var il=document.getElementById('ind-skip'),ir=document.getElementById('ind-love');
-    if(curX<-20&&il)il.style.opacity=p.toFixed(2);else if(il)il.style.opacity='0';
-    if(curX>20&&ir)ir.style.opacity=p.toFixed(2);else if(ir)ir.style.opacity='0';
-  }
-  function end(){
-    if(!drag)return;drag=false;
-    if(curX>THR)doSwipe('right',idx);
-    else if(curX<-THR)doSwipe('left',idx);
-    else{
-      el.style.transition='transform 0.4s cubic-bezier(0.34,1.2,0.64,1)';
-      el.style.transform='scale(1) translateY(0)';
-      var il=document.getElementById('ind-skip'),ir=document.getElementById('ind-love');
-      if(il)il.style.opacity='0';if(ir)ir.style.opacity='0';
-    }
-  }
-  el.addEventListener('mousedown',function(e){start(e.clientX);});
-  window.addEventListener('mousemove',function(e){if(drag)move(e.clientX);});
-  window.addEventListener('mouseup',end);
-  el.addEventListener('touchstart',function(e){start(e.touches[0].clientX);},{passive:true});
-  el.addEventListener('touchmove',function(e){if(drag)move(e.touches[0].clientX);},{passive:true});
-  el.addEventListener('touchend',end,{passive:true});
-}
-
-function doSwipe(dir,idx){
-  var el=document.getElementById('mc-'+idx);if(!el)return;
-  var card=CARDS[idx];
-  el.style.transition='transform 0.42s cubic-bezier(0.4,0,0.2,1),opacity 0.42s';
-  el.style.transform=dir==='right'?'translateX(150%) rotate(18deg)':'translateX(-150%) rotate(-18deg)';
-  el.style.opacity='0';
-  if(dir==='right'){votes[card.id].v+=1;showBurst(card,'love');}
-  else{showBurst(card,'like');}
-  setTimeout(function(){curIdx++;renderCards();},400);
-}
-
-function trigSwipe(dir){
-  if(dir==='info'){var c=CARDS[curIdx];if(c)showBurst(c,'info');return;}
-  if(curIdx<CARDS.length)doSwipe(dir,curIdx);
-}
-
-// ── LOVE / LIKE BURST ─────────────────────────────────────
-function showBurst(card,type){
-  var el=document.createElement('div');
-  if(type==='love'){
-    el.className='love-burst';
-    el.innerHTML='<div class="love-main" style="color:'+card.accent+';">LOVEEEE</div><div class="love-hearts" style="color:'+card.accent+';">♡♡♡♡</div>';
-  } else {
-    el.className='like-burst';
-    el.innerHTML='<div class="like-text">Like ✦</div>';
-  }
-  document.body.appendChild(el);
-  setTimeout(function(){if(el.parentNode)el.parentNode.removeChild(el);},900);
-}
-
-// ── VOTE BARS ─────────────────────────────────────────────
-function renderVotes(){
-  var bars=document.getElementById('v-bars');if(!bars)return;
-  var total=0;Object.values(votes).forEach(function(v){total+=v.v;});
-  var tot=document.getElementById('v-total');if(tot)tot.textContent=total+' votes cast';
-  var sorted=Object.entries(votes).sort(function(a,b){return b[1].v-a[1].v;});
-  bars.innerHTML=sorted.map(function(e){
-    var d=e[1],pct=total>0?Math.round((d.v/total)*100):0;
-    return '<div class="vote-row"><div class="vote-row-top"><span style="font-size:11px;color:rgba(232,228,218,0.55);">'+d.name+'</span><span style="font-size:11px;font-family:\'Cormorant Garamond\',Georgia,serif;color:'+d.accent+';">'+pct+'%</span></div><div class="vote-track"><div class="vote-fill" id="vf-'+e[0]+'" style="background:'+d.accent+';width:0%;"></div></div></div>';
-  }).join('');
-  setTimeout(function(){
-    sorted.forEach(function(e){
-      var d=e[1],pct=total>0?Math.round((d.v/total)*100):0;
-      var el=document.getElementById('vf-'+e[0]);if(el)el.style.width=pct+'%';
-    });
-  },100);
-  if(sorted[0]&&sorted[0][1].v>0){
-    var wz=document.getElementById('v-winner');if(wz)wz.style.display='block';
-    var top=sorted[0][1];
-    var wn=document.getElementById('w-name');if(wn)wn.textContent=top.name;
-    var wv=document.getElementById('w-votes');if(wv)wv.textContent=top.v+' votes · '+(total>0?Math.round((top.v/total)*100):0)+'% of total';
-    var wt=document.getElementById('w-thumb');if(wt){wt.src=top.src;wt.onerror=function(){this.style.display='none';};}
-  }
-}
-
-// ── FEED ──────────────────────────────────────────────────
-function filterFeed(type,btn){
-  feedFilter=type;feedCount=6;
-  document.querySelectorAll('.f-btn').forEach(function(b){b.classList.remove('active');});
-  btn.classList.add('active');renderFeed();
-}
-function loadMore(){feedCount+=3;renderFeed();}
-function renderFeed(){
-  var grid=document.getElementById('f-grid');if(!grid)return;
-  var filtered=feedFilter==='all'?FEED:FEED.filter(function(c){
-    if(feedFilter==='social') return c.type==='social';
-    return c.type===feedFilter && !c.embed;
-  });
-  var visible=filtered.slice(0,feedCount);
-  grid.innerHTML=visible.map(function(card){
-    if(card.embed){
-      return '<div class="feed-card-embed">'+
-        '<div class="embed-label" style="color:'+card.tc+';border-color:'+card.tc+'35;">'+card.tag+'</div>'+
-        '<blockquote class="twitter-tweet" data-theme="dark" data-dnt="true">'+
-          '<a href="https://x.com/i/web/status/'+card.tweetId+'"></a>'+
-        '</blockquote>'+
-      '</div>';
-    }
-    return '<div class="feed-card">'+
-      (card.hot?'<div class="hot-badge" style="color:'+card.tc+';border-color:'+card.tc+'40;">HOT</div>':'')+
-      '<div class="feed-tag" style="color:'+card.tc+';border-color:'+card.tc+'35;">'+card.tag+'</div>'+
-      '<div class="feed-title">'+card.title+'</div>'+
-      '<div class="feed-desc">'+card.desc+'</div>'+
-      '<div class="feed-meta"><span>'+card.date+'</span><span>'+card.meta+'</span></div>'+
-    '</div>';
-  }).join('');
-  if(window.twttr && window.twttr.widgets) window.twttr.widgets.load(grid);
-}
-
-// ── MEMES ─────────────────────────────────────────────────
-function renderMemes(){
-  var g=document.getElementById('meme-grid');if(!g)return;
-  g.innerHTML=MEMES.map(function(m){
-    var a=m.teal?'rgba(127,191,184,':'rgba(201,169,110,';
-    return '<div class="meme-card"><span class="meme-emoji">'+m.e+'</span><p class="meme-text">'+m.t+'</p><div class="meme-foot"><span class="meme-tag" style="color:'+a+'0.65);border-color:'+a+'0.28);">'+m.tag+'</span><span class="meme-src">'+m.s+'</span></div></div>';
-  }).join('');
-  var hof=document.getElementById('hof-strip');if(!hof)return;
-  hof.innerHTML=HOF.map(function(h){
-    return '<div class="hof-card"><div style="font-size:8px;letter-spacing:0.28em;color:rgba(127,191,184,0.48);margin-bottom:9px;">#'+h.r+' ALL TIME</div><div class="cormorant" style="font-size:14px;color:#E8E4DA;margin-bottom:7px;line-height:1.3;">'+h.t+'</div><div style="font-size:9px;color:rgba(127,191,184,0.55);">'+h.c+'</div><div style="font-size:9px;color:rgba(232,228,218,0.3);margin-top:3px;">'+h.v+'</div></div>';
+function renderFeed() {
+  var timeline = document.getElementById('feed-timeline');
+  if (!timeline) return;
+  var filtered = feedFilter === 'all' ? FEED_DATA : FEED_DATA.filter(function(c) { return c.type === feedFilter; });
+  var visible  = filtered.slice(0, feedCount);
+  timeline.innerHTML = visible.map(function(item) {
+    return '<div class="feed-item'+(item.hot?' hot-item':'')+'">'
+      + '<div>'
+      + '<span class="feed-item-badge" style="color:'+item.tc+';border-color:'+item.tc+'30;">'+item.tag+'</span>'
+      + (item.hot ? '<span class="hot-pill" style="color:'+item.tc+';border-color:'+item.tc+'30;">HOT</span>' : '')
+      + '</div>'
+      + '<div class="feed-item-title">'+item.title+'</div>'
+      + '<div class="feed-item-desc">'+item.desc+'</div>'
+      + '<div class="feed-item-meta"><span>'+item.date+'</span><span>'+item.meta+'</span></div>'
+      + '</div>';
   }).join('');
 }
 
-// ── SCROLL OBSERVER ───────────────────────────────────────
-function initObserver(){
-  var els=document.querySelectorAll('.fade-up');
-  var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
+// ── SCROLL OBSERVER ──────────────────────────────────────────────────
+function initObserver() {
+  var els = document.querySelectorAll('.fade-up');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el) { el.classList.add('visible'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
         e.target.classList.add('visible');
-        if(e.target.id==='chemistry'){
-          setTimeout(function(){var cl=document.getElementById('chem-line');if(cl)cl.style.width='60%';},400);
+        // expand chem-divider when together section visible
+        if (e.target.id === 'together') {
+          setTimeout(function() {
+            var d = document.getElementById('chem-div');
+            if (d) d.classList.add('expanded');
+          }, 500);
         }
         obs.unobserve(e.target);
       }
     });
-  },{threshold:0.15});
-  els.forEach(function(el){obs.observe(el);});
+  }, {threshold: 0.12});
+  els.forEach(function(el) { obs.observe(el); });
 }
 
-// ── NAV SCROLL ────────────────────────────────────────────
-window.addEventListener('scroll',function(){
-  var nav=document.getElementById('main-nav');
-  if(nav){nav.classList.toggle('scrolled',window.scrollY>60);}
-});
+// ── INIT ─────────────────────────────────────────────────────────────
+mkStars('starfield', 80);
+mkStars('h-starfield', 50);
+mkStars('namtan-stars', 25);
+mkStars('film-stars', 25);
+mkStars('together-stars', 35);
+buildStats();
+buildTicker();
+renderFeed();
+initObserver();
 
-// ── SCROLL TO ─────────────────────────────────────────────
-function scrollTo(id){
-  var el=document.querySelector(id);
-  if(el)el.scrollIntoView({behavior:'smooth'});
-}
+// Hero name entrance animation
+setTimeout(function() {
+  var nn = document.getElementById('hn-n');
+  var nf = document.getElementById('hn-f');
+  if (nn) nn.classList.add('visible');
+  setTimeout(function() { if (nf) nf.classList.add('visible'); }, 220);
+}, 380);
 
-// ── INIT ──────────────────────────────────────────────────
-mkStars('starfield',100);
-mkStars('d-sf',50);
-mkStars('m-sf',40);
-renderCards();renderFeed();renderMemes();renderGallery();initObserver();
-
-// Desktop name entrance
-setTimeout(function(){
-  var nn=document.getElementById('dn-name'),nf=document.getElementById('df-name');
-  if(nn){nn.style.opacity='1';nn.style.transform='translateY(0)';nn.style.transition='all 1.2s cubic-bezier(0.34,1,0.64,1)';}
-  setTimeout(function(){if(nf){nf.style.opacity='1';nf.style.transform='translateY(0)';nf.style.transition='all 1.2s cubic-bezier(0.34,1,0.64,1)';}},200);
-},400);
-
-// Mission progress bar
-setTimeout(function(){var p=document.getElementById('prog-fill');if(p)p.style.width='68%';},800);
-
-// Chem stars
-mkStars('chem-stars',30);
+// Fetch YouTube RSS
+fetchYouTubeRSS();
 </script>
-<!-- Twitter / X embed script -->
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 </body>
 </html>
