@@ -223,16 +223,30 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opac
 .gallery-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:48px;}
 .g-tab{font-size:8px;letter-spacing:0.28em;padding:7px 16px;border:1px solid rgba(232,228,218,0.12);background:transparent;color:rgba(232,228,218,0.38);cursor:pointer;font-family:Georgia,serif;transition:all 0.25s;}
 .g-tab:hover,.g-tab.active{border-color:rgba(232,228,218,0.4);color:#E8E4DA;background:rgba(232,228,218,0.04);}
+/* ── PHOTO CAROUSEL ── */
+.carousel-wrap{position:relative;overflow:hidden;width:100%;margin-bottom:52px;}
+.carousel-wrap::before,.carousel-wrap::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:4;pointer-events:none;}
+.carousel-wrap::before{left:0;background:linear-gradient(to right,#06060E,transparent);}
+.carousel-wrap::after{right:0;background:linear-gradient(to left,#06060E,transparent);}
+.carousel-track{display:flex;gap:12px;width:max-content;animation:carouselScroll 40s linear infinite;}
+.carousel-track:hover{animation-play-state:paused;}
+@keyframes carouselScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.carousel-item{position:relative;width:260px;height:340px;overflow:hidden;flex-shrink:0;cursor:pointer;}
+.carousel-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease,opacity 0.8s ease;opacity:0;}
+.carousel-item img.loaded{opacity:1;}
+.carousel-item:hover img{transform:scale(1.05);}
+.carousel-item-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,6,14,0.85) 0%,rgba(6,6,14,0.2) 50%,transparent 100%);pointer-events:none;}
+.carousel-item-label{position:absolute;bottom:14px;left:14px;right:14px;z-index:2;}
+.carousel-item-person{font-size:7px;letter-spacing:0.28em;font-family:Georgia,serif;margin-bottom:4px;}
+.carousel-item-title{font-size:11px;color:#E8E4DA;font-family:'Cormorant Garamond',Georgia,serif;line-height:1.3;}
+/* ── GALLERY GRID ── */
 #gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto;}
-.g-card{background:rgba(232,228,218,0.02);border:1px solid rgba(232,228,218,0.07);overflow:hidden;transition:transform 0.3s,border-color 0.3s;}
+.g-card{background:rgba(232,228,218,0.02);border:1px solid rgba(232,228,218,0.07);overflow:hidden;transition:transform 0.3s,border-color 0.3s;cursor:pointer;}
 .g-card:hover{transform:translateY(-4px);border-color:rgba(232,228,218,0.18);}
-.g-media{position:relative;}
-.yt-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;cursor:pointer;background:#0D0D1A;}
-.yt-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;}
-.yt-wrap:hover img{transform:scale(1.04);}
-.yt-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(6,6,14,0.3);transition:background 0.3s;}
-.yt-wrap:hover .yt-overlay{background:rgba(6,6,14,0.5);}
-.yt-play{width:50px;height:50px;border-radius:50%;background:rgba(6,6,14,0.78);border:1.5px solid rgba(232,228,218,0.35);display:flex;align-items:center;justify-content:center;}
+.g-media{position:relative;padding-bottom:75%;height:0;overflow:hidden;background:#0D0D1A;}
+.g-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease,opacity 0.8s;opacity:0;}
+.g-media img.loaded{opacity:1;}
+.g-card:hover .g-media img{transform:scale(1.04);}
 .g-loading{text-align:center;padding:60px;color:rgba(232,228,218,0.3);font-size:11px;letter-spacing:0.3em;animation:gPulse 1.8s ease-in-out infinite;}
 @keyframes gPulse{0%,100%{opacity:0.3}50%{opacity:0.7}}
 .ig-wrap{min-height:180px;background:rgba(232,228,218,0.02);}
@@ -680,13 +694,16 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opac
     <button class="g-tab" onclick="filterGallery('film',this)">🌟 FILM</button>
     <button class="g-tab" onclick="filterGallery('both',this)">✦ TOGETHER</button>
   </div>
-  <div id="gallery-grid">
-    <div class="g-loading">✦ LOADING LATEST VIDEOS</div>
+  <!-- 自动滚动轮播 -->
+  <div class="carousel-wrap">
+    <div class="carousel-track" id="carousel-track"></div>
   </div>
+  <!-- 筛选网格 -->
+  <div id="gallery-grid"></div>
   <div style="max-width:1200px;margin:32px auto 0;border:1px dashed rgba(232,228,218,0.08);padding:18px 24px;">
-    <div style="font-size:8px;letter-spacing:0.32em;color:rgba(232,228,218,0.28);margin-bottom:8px;">✦ HOW TO ADD MORE</div>
+    <div style="font-size:8px;letter-spacing:0.32em;color:rgba(232,228,218,0.28);margin-bottom:8px;">✦ 如何添加照片</div>
     <div style="font-size:10px;color:rgba(232,228,218,0.38);line-height:1.85;font-family:'Cormorant Garamond',Georgia,serif;">
-      Edit <span style="color:#C9A96E;">CONFIG.instagram</span> at the top of the script to add Instagram posts. YouTube videos are auto-fetched from GMMTV's channel. Add pinned video IDs to <span style="color:#C9A96E;">CONFIG.youtube.pinned</span>.
+      编辑脚本顶部的 <span style="color:#C9A96E;">PHOTOS_CONFIG</span> 数组，填入任意公开图片 URL 即可自动出现在轮播和网格中。
     </div>
   </div>
 </section>
@@ -774,21 +791,28 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opac
 // ════════════════════════════════════════════
 //  AUTO-FETCH CONFIG — edit these to update
 // ════════════════════════════════════════════
-var CONFIG = {
-  youtube: {
-    // GMMTV Official channel ID
-    channelId: 'UC8BzJM6_VbZTdiNLD4R1jxQ',
-    // How many RSS videos to show
-    maxVideos: 6,
-    // Pinned video IDs always shown first
-    pinned: ['YWkIBHRFDHc', 'XoZ7P9kEWKU'],
-  },
-  instagram: [
-    { url: 'https://www.instagram.com/p/DC76sN8zq4c/', person: 'namtan', label: 'Girl Rules Promo' },
-    { url: 'https://www.instagram.com/reel/DQ7gxznAUWX/', person: 'both', label: 'Official Reel' },
-    // add more Instagram post URLs here
-  ],
-};
+// ════════════════════════════════════════════════════════════
+//  PHOTOS_CONFIG — 在这里添加照片，轮播和网格会自动更新
+//  src    : 任意公开图片URL（YouTube缩略图已内置可用）
+//  person : "namtan" | "film" | "both"
+//  label  : 显示标题
+//  caption: 小字说明
+// ════════════════════════════════════════════════════════════
+var PHOTOS_CONFIG = [
+  // ── Namtan ──────────────────────────────────────────────
+  { src:'https://img.youtube.com/vi/YWkIBHRFDHc/maxresdefault.jpg', person:'namtan', label:'Girl Rules · Prim',        caption:'© GMMTV Official' },
+  { src:'https://img.youtube.com/vi/YWkIBHRFDHc/hqdefault.jpg',     person:'namtan', label:'Girl Rules BTS',           caption:'© GMMTV Official' },
+  { src:'https://img.youtube.com/vi/XoZ7P9kEWKU/hqdefault.jpg',     person:'namtan', label:'Paris Fashion Week',       caption:'© GMMTV Official' },
+  // ── Film ────────────────────────────────────────────────
+  { src:'https://img.youtube.com/vi/XoZ7P9kEWKU/maxresdefault.jpg', person:'film',   label:'Girl Rules · Bambi',       caption:'© GMMTV Official' },
+  { src:'https://img.youtube.com/vi/YWkIBHRFDHc/sddefault.jpg',     person:'film',   label:'Seoul Drama Awards',       caption:'© GMMTV Official' },
+  { src:'https://img.youtube.com/vi/XoZ7P9kEWKU/sddefault.jpg',     person:'film',   label:'Polo Ralph Lauren · PFW',  caption:'© GMMTV Official' },
+  // ── Together ────────────────────────────────────────────
+  { src:'https://img.youtube.com/vi/YWkIBHRFDHc/maxresdefault.jpg', person:'both',   label:'#NamtanFilm · Girl Rules', caption:'© GMMTV Official' },
+  { src:'https://img.youtube.com/vi/XoZ7P9kEWKU/maxresdefault.jpg', person:'both',   label:'Two Stars · One Sky',      caption:'© GMMTV Official' },
+  // ── 在下方继续添加 ──────────────────────────────────────
+  // { src:'https://...', person:'namtan', label:'...', caption:'...' },
+];
 
 // ── STATIC FEED DATA ─────────────────────────────────────────────────
 // Edit this array to update the Live Feed / News section.
@@ -840,7 +864,6 @@ var feedCount = 6;
 
 // ── GALLERY STATE ─────────────────────────────────────────────────────
 var galleryFilter = 'all';
-var galleryVideos = []; // populated by RSS fetch
 var igScriptLoaded = false;
 
 // ── STARS ─────────────────────────────────────────────────────────────
@@ -1013,89 +1036,27 @@ function buildTicker() {
   inner.innerHTML = html;
 }
 
-// ── YOUTUBE RSS AUTO-FETCH ────────────────────────────────────────────
-function fetchYouTubeRSS() {
-  var rssUrl = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + CONFIG.youtube.channelId;
-  var proxies = [
-    'https://api.allorigins.win/get?url=' + encodeURIComponent(rssUrl),
-    'https://corsproxy.io/?' + encodeURIComponent(rssUrl),
-  ];
-  function tryProxy(idx) {
-    if (idx >= proxies.length) { renderFallbackGallery(); return; }
-    fetch(proxies[idx], { signal: AbortSignal.timeout(8000) })
-      .then(function(r) { return r.json().catch(function() { return r.text().then(function(t){ return {contents:t}; }); }); })
-      .then(function(data) {
-        var raw = data.contents || data;
-        if (!raw || raw.toString().indexOf('<feed') === -1) { tryProxy(idx + 1); return; }
-        parseAndRender(raw);
-      })
-      .catch(function() { tryProxy(idx + 1); });
-  }
-  tryProxy(0);
+// ── CAROUSEL INIT ────────────────────────────────────────────────────
+function initCarousel() {
+  var track = document.getElementById('carousel-track');
+  if (!track) return;
+  // 双倍渲染实现无缝循环
+  var allPhotos = PHOTOS_CONFIG.concat(PHOTOS_CONFIG);
+  track.innerHTML = allPhotos.map(function(p) {
+    var ac = p.person === 'namtan' ? '#C9A96E' : p.person === 'film' ? '#7FBFB8' : '#E8E4DA';
+    return '<div class="carousel-item">'
+      + '<img src="' + p.src + '" alt="' + escHtml(p.label) + '" onload="this.classList.add(\'loaded\')" onerror="this.parentElement.style.display=\'none\'">'
+      + '<div class="carousel-item-overlay"></div>'
+      + '<div class="carousel-item-label">'
+      + '<div class="carousel-item-person" style="color:' + ac + ';">'
+        + (p.person === 'namtan' ? '🌙 NAMTAN' : p.person === 'film' ? '🌟 FILM' : '✦ NAMTANFILM')
+      + '</div>'
+      + '<div class="carousel-item-title">' + escHtml(p.label) + '</div>'
+      + '</div>'
+      + '</div>';
+  }).join('');
 }
 
-function parseAndRender(xmlText) {
-  {
-    var parser = new DOMParser();
-    var xml = parser.parseFromString(xmlText, 'text/xml');
-      var entries = xml.querySelectorAll('entry');
-      var videos = [];
-      var seen = {};
-      // pinned first
-      CONFIG.youtube.pinned.forEach(function(vid) {
-        if (!seen[vid]) {
-          seen[vid] = true;
-          videos.push({
-            videoId: vid,
-            title: vid === 'YWkIBHRFDHc' ? 'Girl Rules — Official Trailer' : 'Girl Rules EP.1',
-            published: '2026',
-            person: 'both',
-            caption: '© GMMTV Official',
-          });
-        }
-      });
-      var count = 0;
-      entries.forEach(function(entry) {
-        if (count >= CONFIG.youtube.maxVideos) return;
-        var link = entry.querySelector('link');
-        var videoId = '';
-        if (link) {
-          var href = link.getAttribute('href') || '';
-          var m = href.match(/[?&]v=([^&]+)/);
-          if (m) videoId = m[1];
-        }
-        var vidEl = entry.getElementsByTagNameNS('http://www.youtube.com/xml/schemas/2015', 'videoId')[0];
-        if (vidEl) videoId = vidEl.textContent.trim();
-        if (!videoId || seen[videoId]) return;
-        seen[videoId] = true;
-        var titleEl = entry.querySelector('title');
-        var pubEl   = entry.querySelector('published');
-        videos.push({
-          videoId: videoId,
-          title: titleEl ? titleEl.textContent : 'GMMTV Video',
-          published: pubEl ? pubEl.textContent.substring(0,10) : '',
-          person: 'both',
-          caption: '© GMMTV Official',
-        });
-        count++;
-      });
-      galleryVideos = videos;
-      renderGallery();
-  }
-}
-
-function renderFallbackGallery() {
-  galleryVideos = CONFIG.youtube.pinned.map(function(vid, i) {
-    return {
-      videoId: vid,
-      title: i === 0 ? 'Girl Rules — Official Trailer' : 'Girl Rules EP.1',
-      published: '2026',
-      person: 'both',
-      caption: '© GMMTV Official',
-    };
-  });
-  renderGallery();
-}
 
 // ── GALLERY RENDER ───────────────────────────────────────────────────
 function filterGallery(f, btn) {
@@ -1109,66 +1070,25 @@ function renderGallery() {
   var grid = document.getElementById('gallery-grid');
   if (!grid) return;
 
-  // Combine YouTube + Instagram
-  var allItems = [];
-
-  // YouTube
-  galleryVideos.forEach(function(v) {
-    allItems.push({
-      type: 'youtube',
-      videoId: v.videoId,
-      title: v.title,
-      published: v.published,
-      person: v.person || 'both',
-      caption: v.caption || '© GMMTV Official',
-      label: v.title,
-    });
-  });
-
-  // Instagram
-  CONFIG.instagram.forEach(function(ig) {
-    allItems.push({
-      type: 'instagram',
-      postUrl: ig.url,
-      person: ig.person || 'both',
-      label: ig.label || 'Instagram Post',
-      caption: ig.person === 'namtan' ? '@namtan.tipnaree' : ig.person === 'film' ? '@fr.racha' : '@gmmtv',
-    });
-  });
-
-  // Filter
   var items = galleryFilter === 'all'
-    ? allItems
-    : allItems.filter(function(i) {
-        if (galleryFilter === 'both') return i.person === 'both';
-        return i.person === galleryFilter || i.person === 'both';
+    ? PHOTOS_CONFIG
+    : PHOTOS_CONFIG.filter(function(p) {
+        if (galleryFilter === 'both') return p.person === 'both';
+        return p.person === galleryFilter || p.person === 'both';
       });
 
   if (items.length === 0) {
-    grid.innerHTML = '<div class="g-loading" style="grid-column:1/-1;">No items match this filter.</div>';
+    grid.innerHTML = '<div class="g-loading" style="grid-column:1/-1;">暂无此分类内容</div>';
     return;
   }
 
   grid.innerHTML = items.map(function(item) {
     var ac = item.person === 'namtan' ? '#C9A96E' : item.person === 'film' ? '#7FBFB8' : '#E8E4DA';
     var personLabel = item.person === 'namtan' ? '🌙 NAMTAN' : item.person === 'film' ? '🌟 FILM' : '✦ NAMTANFILM';
-    var mediaHtml = '';
-
-    if (item.type === 'youtube') {
-      mediaHtml = '<div class="yt-wrap" onclick="openYTModal(\''+item.videoId+'\')" title="'+escHtml(item.title)+'">'
-        + '<img src="https://img.youtube.com/vi/'+item.videoId+'/maxresdefault.jpg" alt="'+escHtml(item.title)+' © GMMTV" style="opacity:0;transition:opacity 0.8s;" onload="this.style.opacity=1" onerror="this.src=\'https://img.youtube.com/vi/'+item.videoId+'/hqdefault.jpg\'"/>'
-        + '<div class="yt-overlay"><div class="yt-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="#E8E4DA" style="margin-left:2px;"><path d="M8 5v14l11-7z"/></svg></div></div>'
-        + '</div>';
-    } else if (item.type === 'instagram') {
-      mediaHtml = '<div class="ig-wrap">'
-        + '<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="'+item.postUrl+'" data-instgrm-version="14" style="width:100%;margin:0!important;border:none!important;background:transparent!important;"></blockquote>'
-        + '</div>';
-    }
-
     return '<div class="g-card">'
-      + '<div class="g-media" style="position:relative;">'
-      + mediaHtml
-      + '<div class="g-type-badge" style="color:'+ac+'90;border-color:'+ac+'25;">'+(item.type==='youtube'?'▶ YT':'◈ IG')+'</div>'
+      + '<div class="g-media">'
+      + '<img src="' + escHtml(item.src) + '" alt="' + escHtml(item.label) + '" onload="this.classList.add(\'loaded\')" onerror="this.style.display=\'none\'">'
+      + '<div class="g-type-badge" style="color:'+ac+'90;border-color:'+ac+'25;">◈ PHOTO</div>'
       + '</div>'
       + '<div class="g-meta">'
       + '<div class="g-person" style="color:'+ac+';">'+personLabel+'</div>'
@@ -1178,9 +1098,6 @@ function renderGallery() {
       + '<div class="g-footer" style="background:linear-gradient(to right,'+ac+'25,transparent);"></div>'
       + '</div>';
   }).join('');
-
-  // Load Instagram embeds
-  loadIGEmbeds();
 }
 
 function escHtml(s) {
@@ -1297,7 +1214,8 @@ setTimeout(function() {
 }, 380);
 
 // Fetch YouTube RSS
-fetchYouTubeRSS();
+initCarousel();
+renderGallery();
 </script>
 </body>
 </html>
