@@ -967,14 +967,7 @@ document.addEventListener('mousemove', function(e) {
 });
 
 function heroPlay(side, videoId) {
-  var overlay = document.getElementById('hyt-'+side);
-  var iframe  = document.getElementById('hyt-iframe-'+side);
-  if (!overlay || !iframe) return;
-  iframe.src = 'https://www.youtube.com/embed/'+videoId+'?autoplay=1&rel=0';
-  overlay.style.display = 'block';
-  overlay.onclick = function(ev) {
-    if (ev.target === overlay) { iframe.src = ''; overlay.style.display = 'none'; }
-  };
+  window.open('https://www.youtube.com/watch?v=' + videoId, '_blank');
 }
 
 // ── STATS BAR ────────────────────────────────────────────────────────
@@ -1119,12 +1112,7 @@ function loadIGEmbeds() {
 
 // ── YOUTUBE MODAL ────────────────────────────────────────────────────
 function openYTModal(videoId) {
-  var modal  = document.getElementById('yt-modal');
-  var iframe = document.getElementById('yt-modal-iframe');
-  if (!modal || !iframe) return;
-  iframe.src = 'https://www.youtube.com/embed/'+videoId+'?autoplay=1&rel=0';
-  modal.classList.add('open');
-  document.body.style.overflow = 'hidden';
+  window.open('https://www.youtube.com/watch?v=' + videoId, '_blank');
 }
 function closeYTModal(force) {
   if (force === true || (force && force.target === document.getElementById('yt-modal'))) {
