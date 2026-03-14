@@ -777,7 +777,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opac
 var CONFIG = {
   youtube: {
     // GMMTV Official channel ID
-    channelId: 'UCcgm3o_-_DXchf0mzqNMK4Q',
+    channelId: 'UC8BzJM6_VbZTdiNLD4R1jxQ',
     // How many RSS videos to show
     maxVideos: 6,
     // Pinned video IDs always shown first
@@ -1048,7 +1048,7 @@ function fetchYouTubeRSS() {
           var m = href.match(/[?&]v=([^&]+)/);
           if (m) videoId = m[1];
         }
-        var vidEl = entry.querySelector('videoId');
+        var vidEl = entry.getElementsByTagNameNS('http://www.youtube.com/xml/schemas/2015', 'videoId')[0];
         if (vidEl) videoId = vidEl.textContent.trim();
         if (!videoId || seen[videoId]) return;
         seen[videoId] = true;
