@@ -1016,12 +1016,28 @@ function buildTicker() {
 // ── YOUTUBE RSS AUTO-FETCH ────────────────────────────────────────────
 function fetchYouTubeRSS() {
   var rssUrl = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + CONFIG.youtube.channelId;
-  var proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(rssUrl);
-  fetch(proxyUrl)
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      var parser = new DOMParser();
-      var xml = parser.parseFromString(data.contents, 'text/xml');
+  var proxies = [
+    'https://api.allorigins.win/get?url=' + encodeURIComponent(rssUrl),
+    'https://corsproxy.io/?' + encodeURIComponent(rssUrl),
+  ];
+  function tryProxy(idx) {
+    if (idx >= proxies.length) { renderFallbackGallery(); return; }
+    fetch(proxies[idx], { signal: AbortSignal.timeout(8000) })
+      .then(function(r) { return r.json().catch(function() { return r.text().then(function(t){ return {contents:t}; }); }); })
+      .then(function(data) {
+        var raw = data.contents || data;
+        if (!raw || raw.toString().indexOf('<feed') === -1) { tryProxy(idx + 1); return; }
+        parseAndRender(raw);
+      })
+      .catch(function() { tryProxy(idx + 1); });
+  }
+  tryProxy(0);
+}
+
+function parseAndRender(xmlText) {
+  {
+    var parser = new DOMParser();
+    var xml = parser.parseFromString(xmlText, 'text/xml');
       var entries = xml.querySelectorAll('entry');
       var videos = [];
       var seen = {};
@@ -1065,10 +1081,7 @@ function fetchYouTubeRSS() {
       });
       galleryVideos = videos;
       renderGallery();
-    })
-    .catch(function() {
-      renderFallbackGallery();
-    });
+  }
 }
 
 function renderFallbackGallery() {
